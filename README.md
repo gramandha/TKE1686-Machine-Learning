@@ -1,6 +1,5 @@
 # [TKE1686] MK Machine Learning (3-SKS)
 ## Pengantar Machine Learning pada bidang Teknik Elektro
-----------
 oleh Gramandha Wega Intyanto
 
 ## Definisi Machine Learning
