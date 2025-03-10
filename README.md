@@ -48,6 +48,8 @@ contoh kasus:
 Pada supervised learning ini pada umumnya memiliki minimal 2 data, data input yaitu pola pada data dan data output yaitu kategori (label).
 
 <img src="https://media.geeksforgeeks.org/wp-content/uploads/20241022160725494723/supervised-machine-learning.webp" width="500">
+source : geeksforgeeks
+
 
 Tipe dari _Supervised Learning_ yaitu:
 
@@ -70,7 +72,6 @@ Berikut contoh algoritma yang lebih lengkap terkait _Supervised Learning_
 | Naive Bayes       | Klasifikasi               | Memprediksi kelas berdasarkan asumsi independensi fitur | Teorema Bayes dengan asumsi independensi fitur              | Klasifikasi teks, penyaringan spam, analisis sentimen, medis |
 
 
-
 ### Unsupervised Learning
 
 Teknik atau model pembelajaran yang diterapkan pada mesin dari pola dalam data yang tidak memiliki label tertentu
@@ -82,6 +83,7 @@ Operator jaringan lisrik ingin mengkelompokkan pelanggan berdasarkan pola komsum
 Pada _unsupervised learning_ ini pada umumnya memiliki minimal 1 data, data input yaitu pola pada data.
 
 <img src="https://media.geeksforgeeks.org/wp-content/uploads/20231124111325/Unsupervised-learning.png" width="500">
+source : geeksforgeeks
 
 Tipe dari _Unsupervised Learning_ yaitu:
 
@@ -91,7 +93,21 @@ Tipe dari _Unsupervised Learning_ yaitu:
 
 Contoh algoritma atau model yang digunakan pada yaitu K-means cluster
 
+#### Contoh dataset ML
+
+Supervised
+
+<img src="https://ilmudatapy.com/wp-content/uploads/2020/07/klasifikasi-1.png" width="250">
+
+Unsupervised
+
+<img src="dataset_image.png" width="250">
+
+
+
+
 ## 3. Peran Machine Learning dalam Teknik Elektro
+
 Machine Learning memiliki peran penting dalam berbagai aspek Teknik Elektro, termasuk pemrosesan sinyal, pengendalian sistem, dan optimasi kinerja perangkat elektronik. Beberapa penerapan utama ML dalam Teknik Elektro adalah:
 ### a. Pemrosesan Sinyal dan Citra Digital
 - Deteksi dan klasifikasi sinyal menggunakan Fourier Transform dan Wavelet Transform.
@@ -110,6 +126,31 @@ Machine Learning memiliki peran penting dalam berbagai aspek Teknik Elektro, ter
 - Pendeteksian anomali dalam jaringan listrik untuk mencegah blackout atau gangguan listrik.
 - Sistem keamanan berbasis ML dalam deteksi peretasan jaringan komunikasi dan kendali.
 
+
+
+## 4. Tools yang digunakan untuk ML
+Pada akhir tahun ini perancangan ML bahasa program yang sering digunakan yaitu Python dengan beberapa tools library berikut:
+
+Framework dan Library ML
+- [TensorFlow](https://www.tensorflow.org/) : Framework open-source untuk deep learning dan ML yang dikembangkan oleh Google.
+- [PyTorch](https://pytorch.org/)  :   Framework ML berbasis Python dengan fleksibilitas tinggi, dikembangkan oleh Facebook AI.
+- [Scikit-learn](https://scikit-learn.org/) : Library ML berbasis Python untuk klasifikasi, regresi, dan clustering.
+- [Keras](https://keras.io/)  :   API tinggi berbasis TensorFlow untuk pengembangan model deep learning.
+
+Tools untuk Pemrosesan Data dan Visualisasi
+- [Pandas](https://pandas.pydata.org/) :   Library Python untuk manipulasi dan analisis data berbasis tabel.
+- [NumPy](https://numpy.org/) :   Library untuk operasi numerik dan array multidimensi dalam Python.
+- [Matplotlib](https://matplotlib.org/) : Library visualisasi untuk membuat grafik dan plot data.
+- [Seaborn](https://seaborn.pydata.org/) : Library berbasis Matplotlib untuk visualisasi data yang lebih menarik.
+- [Dask](https://www.dask.org/) : Library untuk pemrosesan data besar yang dapat berjalan secara paralel.
+
+*Note: Kalau Anda ingin mencoba-coba ada software yang sudah include untuk penerapan ML yaitu [WEKA](https://ml.cms.waikato.ac.nz/weka/index.html)
+
+
 ## 4. Tugas Mahasiswa
+
 1. Silahkan cari studi kasus pada bidang Anda yang dapat diselesaikan dengan ML. Beri 2 contoh tiap teknik(**_supervised learning_** dan **_unspervised learning_**) satu masalah!
 2. Cari dataset terkait studi kasus tersebut kemudian jelaskan proses penyelesaian dengan algoritma apa!
+
+**Note:**
+Rekomendasi tempat untuk mencari dataset: [kaggle](https://www.kaggle.com/datasets), [uci](https://archive.ics.uci.edu/), [google dataset](https://datasetsearch.research.google.com/)
