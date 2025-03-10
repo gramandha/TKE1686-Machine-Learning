@@ -91,9 +91,7 @@ Tipe dari _Unsupervised Learning_ yaitu:
 
 Contoh algoritma atau model yang digunakan pada yaitu K-means cluster
 
-
 ## 3. Peran Machine Learning dalam Teknik Elektro
-
 Machine Learning memiliki peran penting dalam berbagai aspek Teknik Elektro, termasuk pemrosesan sinyal, pengendalian sistem, dan optimasi kinerja perangkat elektronik. Beberapa penerapan utama ML dalam Teknik Elektro adalah:
 ### a. Pemrosesan Sinyal dan Citra Digital
 - Deteksi dan klasifikasi sinyal menggunakan Fourier Transform dan Wavelet Transform.
@@ -112,6 +110,6 @@ Machine Learning memiliki peran penting dalam berbagai aspek Teknik Elektro, ter
 - Pendeteksian anomali dalam jaringan listrik untuk mencegah blackout atau gangguan listrik.
 - Sistem keamanan berbasis ML dalam deteksi peretasan jaringan komunikasi dan kendali.
 
-
-
 ## 4. Tugas Mahasiswa
+1. Silahkan cari studi kasus pada bidang Anda yang dapat diselesaikan dengan ML. Beri 2 contoh tiap teknik(**_supervised learning_** dan **_unspervised learning_**) satu masalah!
+2. Cari dataset terkait studi kasus tersebut kemudian jelaskan proses penyelesaian dengan algoritma apa!
