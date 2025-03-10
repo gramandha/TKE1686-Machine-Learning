@@ -2,7 +2,7 @@
 
 **[TKE1686] MK Machine Learning (3-SKS)**
 
-oleh Gramandha Wega Intyanto
+oleh Gramandha Wega Intyanto, S.ST., M.T.
 
 
 ## 1. Definisi Machine Learning
