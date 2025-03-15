@@ -106,7 +106,7 @@ graph TD;
     A --> P[Data Cleaning]
     P --> Q[Missing data]
     P --> R[Noisy data]
-
+```
 
 ## **2.2.b Pra-Pemrosesan data**
 
