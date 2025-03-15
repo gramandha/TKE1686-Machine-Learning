@@ -16,6 +16,7 @@ graph LR;
     D -.->|Perbaikan pemrosesan Dataset| B;
     D -.->|Revisi Model| C;
     D -.->|Perbaikan Dataset| A;
+```
 
 1. Pengumpulan Dataset: Langkah awal ML adalah mengumpulkan kumpulan data. Hal-hal yang harus dipertimbangakan dalam pengumpulan data yaitu metode pengambilan data, data akan digunakan untuk apa?
 
