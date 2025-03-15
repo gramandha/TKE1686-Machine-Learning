@@ -2,6 +2,7 @@
 **[TKE1686] MK Machine Learning (3-SKS)**
 
 oleh Gramandha Wega Intyanto, S.ST., M.T.
+----
 
 Daftar Isi
 1. [Pertemuan 1: Pengantar *Machine Learning* pada bidang Teknik Elektro](https://github.com/gramandha/TKE1686-Machine-Learning/blob/main/P1_Pengantar%20ML.md)
