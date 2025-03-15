@@ -12,3 +12,7 @@ Daftar Isi
 4. [Pertemuan 4: Pengenalan Supervise Learning (Klasifikasi: SVM Aloritma)]
 5. [Pertemuan 5: Pengenalan Supervise Learning (Regresi: Regresi Linier)]
 6. [Pertemuan 6: Pengenalan Unsupervise Learning (Klaster: K-Means Cluster)]
+
+
+Refrensi
+-----
