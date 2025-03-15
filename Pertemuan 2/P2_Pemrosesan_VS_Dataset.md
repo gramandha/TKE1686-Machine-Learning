@@ -205,9 +205,7 @@ digunakan terutama dalam kasus-kasus di mana distribusi data mengikuti distribus
 Menstandardisasi data tidak membawa data ke rentang tertentu yang telah ditetapkan sebelumnya.
 Oleh karena itu, metode penskalaan fitur ini **tidak terpengaruh oleh outlier**. Setiap kali suatu fitur distandarisasi, setiap data terlebih dahulu dikurangi dari nilai rata-rata dan kemudian dibagi dengan simpangan baku.
 
-$
-X_{std} = \frac{X - \mu}{\sigma}
-$
+$X_{std} = \frac{X - \mu}{\sigma}$
 
 <img src="std.png" width="400"/>
 
