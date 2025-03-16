@@ -19,3 +19,8 @@ Daftar Isi
 
 Refrensi
 -----
+
+1. Tom M. Mitchell, Machine Learning, McGraw-Hill, 1997
+2. Alberto Artasanchez dan Prateek Joshi, Artificial Intelligence with Python, Packt Publishing, 2020
+3. Aurelien Geron, Hands-On Machine Learning with Scikit-Learn, Keras, and Tensorflow: Concepts, Tool, and Techniques, O’Reilly Media, 2017
+4. Eklas Hossain, Machine Learning Course for Engineers, Springer, 2024
