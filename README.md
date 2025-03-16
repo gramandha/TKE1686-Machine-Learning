@@ -4,13 +4,13 @@
 
 oleh Gramandha Wega Intyanto, S.ST., M.T.
 
-[Silabus, RPS, Kontrak kuliah Machine Learning](https://github.com/gramandha/TKE1686-Machine-Learning/blob/main/RPS_ML.pdf)
+[Silabus, RPS, Kontrak kuliah Machine Learning](RPS_ML.pdf)
 
 Daftar Isi
 -----
 
-1. [Pertemuan 1: Pengantar *Machine Learning* pada bidang Teknik Elektro](https://github.com/gramandha/TKE1686-Machine-Learning/blob/main/P1_Pengantar%20ML.md)
-2. [Pertemuan 2: Dataset](https://github.com/gramandha/TKE1686-Machine-Learning/blob/main/Pertemuan%202/P2_Pemrosesan_VS_Dataset.md)
+1. [Pertemuan 1: Pengantar *Machine Learning* pada bidang Teknik Elektro](P1_Pengantar%20ML.md)
+2. [Pertemuan 2: Dataset](Pertemuan%202/P2_Pemrosesan_VS_Dataset.md)
 3. [Pertemuan 3: Pengenalan Supervise Learning (Klasifikasi: K-NN Aloritma)]
 4. [Pertemuan 4: Pengenalan Supervise Learning (Klasifikasi: SVM Aloritma)]
 5. [Pertemuan 5: Pengenalan Supervise Learning (Regresi: Regresi Linier)]
