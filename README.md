@@ -4,6 +4,7 @@
 
 oleh Gramandha Wega Intyanto, S.ST., M.T.
 
+[RPS Machine Learning](https://github.com/gramandha/TKE1686-Machine-Learning/blob/main/RPS_ML.pdf)
 
 Daftar Isi
 -----
