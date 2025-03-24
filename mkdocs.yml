@@ -1,0 +1,27 @@
+site_name: Machine Learning
+theme: readthedocs
+# repo_name: gramandha/gramandha-docs
+repo_url: /home/angdes/Coding/data-docs
+markdown_extensions:
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  - pymdownx.tasklist
+  - pymdownx.details
+  - pymdownx.highlight
+  - pymdownx.snippets
+  - pymdownx.keys
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - https://unpkg.com/mermaid@10/dist/mermaid.min.js
+nav:
+  - Home: index.md
+  - Materi:
+    - 1_pengantar.md
+    - 2_dataset.md
+
+  - Tugas: 
+    - LKM1.md
+    - LKM2.md
+
