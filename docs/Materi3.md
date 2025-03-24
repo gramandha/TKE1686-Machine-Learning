@@ -1,4 +1,4 @@
-# Pertemuan 1: Materi Klaster
+# Pertemuan 3-4: Materi Klaster
 
 **[TKE1686] MK Machine Learning (3-SKS)**
 

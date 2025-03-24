@@ -101,7 +101,7 @@ Supervised
 
 Unsupervised
 
-<img src="dataset_image.png" width="250">
+<img src="assets/dataset_image.png" width="250">
 
 
 
