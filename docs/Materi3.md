@@ -1,4 +1,4 @@
-# Pertemuan 3-4: Materi Klaster
+# Pertemuan 3-4: Klaster (K-Means, Hirarki Klaster, DBSCAN)
 
 **[TKE1686] MK Machine Learning (3-SKS)**
 
@@ -11,7 +11,7 @@ oleh: Gramandha Wega Intyanto, S.ST., M.T.
 
 ![gambar 1](assets/metode_cluster.png)
 
-# K-Means
+## K-Means
 Algoritma K-means adalah salah satu algoritma clustering yang bersifat iteratif yang mencoba untuk mempartisi
 dataset menjadi subkelompok non-overlapping berbeda yang ditentukan oleh K (cluster) di mana setiap titik data
 hanya dimiliki oleh satu kelompok.
@@ -21,7 +21,7 @@ cluster. **K-Means menetapkan poin data ke cluster sedemikian rupa sehingga juml
 **Semakin sedikit variasi** yang kita miliki dalam cluster, **semakin homogen (serupa)** titik data dalam cluster yang
 sama.
 
-## Langkah-Langkah K-Means
+### Langkah-Langkah K-Means
 1. Memilih jumlah cluster awal (K) yang ingin dibuat
 
 ![gambar 1](assets/data_random.png)
@@ -51,7 +51,7 @@ dari cluster tersebut. Jika masih ada data yang berubah kelompok (pindah cluster
 
 ![gambar 4](assets/k-means.gif)
 
-## Penetuan ngukuran jarak bisa menggunakan beberapa metode, seperti contohnya:
+### Penetuan ngukuran jarak bisa menggunakan beberapa metode, seperti contohnya:
    - Ecluidean Distance : Jarak dihitung sebagai **panjang garis lurus** antara dua titik dalam ruang Euclidean. Ini adalah bentuk jarak yang paling umum digunakan dalam analisis data dan pembelajaran mesin.
 
      Formula Euclidean Distance untuk dua titik $(x_1, y_1)$ dan $(x_2, y_2)$ :
@@ -64,7 +64,7 @@ dari cluster tersebut. Jika masih ada data yang berubah kelompok (pindah cluster
 
    - atau menggunakan metode lain Minkowski, Cosine, Mahalanobis, Chebyshev Distance
 
-## Contoh Program K-Means
+### Contoh Program K-Means
 
 
 ```python
@@ -120,26 +120,26 @@ plt.show()
     
 
 
-# Hirarki Klaster _(Hirarical Cluster)_
+## Hirarki Klaster _(Hirarical Cluster)_
 Pengelompokan hierarki adalah Teknik clustering dengan memisahkan data ke dalam kelompok berdasarkan beberapa ukuran
 kesamaan, menemukan cara untuk mengukur bagaimana mereka sama dan berbeda, dan selanjutnya mempersempit data.
 
-## Contoh kasus:
+### Contoh kasus:
 Pertama, terdapat empat mobil yang dapat masukkan ke dalam dua kelompok jenis mobil: sedan dan SUV. 
 Selanjutnya, HC akan menggabungkan sedan dan SUV. 
 Untuk langkah terakhir, yaitu mengelompokkan semuanya ke dalam satu cluster dan selesai ketika kita hanya memiliki satu cluster.
 
 ![gambar 5](assets/kelompok_mobil.png)
 
-## Tipe dari Hirarki klaster
+### Tipe dari Hirarki klaster
 1. Divisive: Pengelompokan divisif dikenal sebagai pendekatan top-down, yaitu mengambil cluster besar dan mulai membaginya menjadi
 dua, tiga, empat, atau lebih cluster.
 2. Agglomerative: Pengelompokan aglomeratif dikenal sebagai pendekatan bottom-up, yaitu pengelompokan dimulai dari cluster kecil menuju satu
 cluster besar.
 
-<img src="assets/hirarki.png" alt="gambar 5" width="800" >
+![gambar](assets/hirarki.png)
 
-## Langkah-langkah metode hierarchical clustering dengan agglomerative:
+### Langkah-langkah metode hierarchical clustering dengan agglomerative:
 1. Buat setiap data poin dalam dataset menjadi sebuah cluster, sehi8ngga untuk N data kita memiliki N cluster. Misalnya jika
 jumlah row data adalah 500 maka akan terdapat 500 cluster.
 2. Cari dua poin/2 cluster yang saling berdekatan untuk digabung menjadi satu cluster sehingga jumlah cluster menjadi lebih
@@ -149,7 +149,7 @@ memang cluster tersebut memiliki jarak terdekat dengan kluster lain), dan jadika
 Dengan demikian, sekarang kita memiliki N-2 kluster.
 4. Langkah ketiga akan diulang terus hingga mendapatkan satu buah cluster besar.
 
-## Menggunakan Dendogram
+### Menggunakan Dendogram
 1. Sama seperti pada contoh hierarchical clustering sebelumnya, terdapat enam titik dalam satu diagram. Grafik yang atas adalah grafik awal dan yang bawah adalah grafik dendogram.
 
 ![gambar 5](assets/step1_ha.png)
@@ -180,7 +180,7 @@ Dengan demikian, sekarang kita memiliki N-2 kluster.
 
 ![gambar 5](assets/step7_ha.png)
 
-## Contoh program hirarki klaster
+### Contoh program hirarki klaster
 
 
 ```python
@@ -269,12 +269,12 @@ Algoritma DBSCAN menggunakan dua parameter yaitu:
 
 Kedua parameter ini dapat diterapkan dengan baik dengan menggunakan dua konsep yaitu Density Reachability dan Density Connectivity
 
-## Konsep
+### Konsep
 
 1. **Reachability** pada konsep ini, untuk menentukan kepadatan dialukan dengan menetapkan suatu titik yang dapat dijangkau dari yang lain jika terletak dalam jarak tertentu (eps) darinya.
 2. **Connectivity**, konsep ini melakukan pendekatan chaining berbasis transitivitas untuk menentukan apakah titik terletak di cluster tertentu. Misalnya, titik p dan q dapat dihubungkan jika $p->r->s->t->q$, di mana $x->y$ berarti $x$ berada di sekitar (neighborhood) $y$.
 
-## Langkah-langkah algoritma DBSCAN
+### Langkah-langkah algoritma DBSCAN
 
 1. Algoritma dimulai dengan mengambil titik dalam kumpulan data secara random (sampai semua titik telah dikunjungi).
 2. Jika setidaknya ada titik 'minPoint' dalam radius ke titik tersebut, maka dapat dianggap semua titik ini sebagai bagian dari cluster yang sama.
@@ -283,7 +283,7 @@ Kedua parameter ini dapat diterapkan dengan baik dengan menggunakan dua konsep y
 ![gambar 5](assets/dbscan_view.png)
 ![gambar 5](assets/dbscan.gif)
 
-## Terdapat tiga jenis titik setelah pengelompokan DBSCAN selesai:
+### Terdapat tiga jenis titik setelah pengelompokan DBSCAN selesai:
 1. Core adalah titik yang memiliki setidaknya m titik dalam jarak n dari dirinya sendiri.
 2. Border adalah titik yang memiliki setidaknya satu titik Inti pada jarak n.
 3. Noise adalah titik yang bukan Core atau Border. Dan ia memiliki kurang dari m titik dalam jarak n
@@ -291,7 +291,7 @@ dari dirinya sendiri.
 
 ![image.png](assets/titik_dbscan.png)
 
-## Contoh program DBSCAN
+### Contoh program DBSCAN
 
 
 ```python
@@ -369,7 +369,7 @@ plt.show()
     
 
 
-## Tugas Materi Klaster
+### Tugas Materi Klaster
 
 Cari dataset yang perlu untuk di klaster atau dari dataset yang Anda punya, silahkan lakukan klaster dari featur yang Anda tentukan, 
 kemudian klaster dengan K-mean Klaster, Hirarki Klaster, dan DBscan.

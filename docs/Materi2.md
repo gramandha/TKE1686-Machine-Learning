@@ -207,7 +207,7 @@ Oleh karena itu, metode penskalaan fitur ini **tidak terpengaruh oleh outlier**.
 
 $X_{std} = \frac{X - \mu}{\sigma}$
 
-<img src="assets/std.png" width="400"/>
+![gambar_s](assets/std.png)
 
 #### b.2. Normalisasi
 Normalisasi adalah metode lain yang populer digunakan untuk penskalaan fitur. Normalisasi

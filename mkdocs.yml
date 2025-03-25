@@ -1,7 +1,7 @@
 site_name: Machine Learning
 theme: readthedocs
 # repo_name: gramandha/gramandha-docs
-repo_url: /home/angdes/Coding/data-docs
+repo_url: https://github.com/gramandha/TKE1686-Machine-Learning
 markdown_extensions:
   - pymdownx.superfences
   - pymdownx.tabbed
@@ -18,8 +18,9 @@ extra_javascript:
 nav:
   - Home: index.md
   - Materi:
-    - 1_pengantar.md
-    - 2_dataset.md
+    - Materi1.md
+    - Materi2.md
+    - Materi3.md
 
   - Tugas: 
     - LKM1.md
