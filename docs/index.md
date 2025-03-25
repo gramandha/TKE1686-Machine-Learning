@@ -38,6 +38,13 @@ mempertimbangkan standar teknis, aspek kinerja, keandalan, kemudahan penerapan, 
 8. Mampu mengaplikasikan model yang dibuat
 9. Mampu menentukan, merumuskan, merancang, mengevaluasi dan menyimpulkan untuk project based machine learning
 
+Daftar Isi
+-----
+
+1. [BAB 1: Pengantar *Machine Learning* pada bidang Teknik Elektro](docs/Materi1.md)
+2. [BAB 2: Dataset](docs/Materi2.md)
+3. [BAB 3: Klaster](docs/Materi3.md)
+
 ## Referensi
 1. Tom M. Mitchell, Machine Learning, McGraw-Hill, 1997
 2. Alberto Artasanchez dan Prateek Joshi, Artificial Intelligence with Python, Packt Publishing, 2020
