@@ -218,7 +218,8 @@ data, **outlier yang ada dalam kumpulan data memengaruhi metode ini**. Normalisa
 
 $X_{norm} = \frac{X - X_{min}}{X_{max} - X_{min}}$
 
-<img src="assets/norm.png" width="400"/>
+![gambar_s](assets/norm.png)
+
 
 | **Kondisi**                                      | **Gunakan Normalisasi** | **Gunakan Standarisasi** |
 |--------------------------------------------------|------------------------|-------------------------|
@@ -293,14 +294,17 @@ Algoritme pembelajaran mesin menangani berbagai jenis data. Oleh karena itu, ber
 - Tipe data sekuensial adalah tipe data yang memiliki urutan tertentu, seperti daftar, string, tupel, urutan byte, array byte, dan objek rentang. Elemen dalam tipe data tersebut dapat diakses melalui indeksnya, yang menunjukkan posisi mereka dalam urutan dan dimulai dari 0. Gambar (a)
 - Tipe data non-sekuensial tidak memiliki urutan, seperti kamus (_dictoneries_) dan set. Tidak ada urutan yang dipertahankan di antara elemen dalam tipe data non-sekuensial. Gambar (b)
 
-<img src="assets/data_urutan.png" width="400"/>
+\
+![gambar_s](assets/data_urutan.png)
+
 
 #### c.2. Stasioner dan non-stasioner
 - Kumpulan data stasioner diketahui memiliki sifat statistik yang konstan, seperti rata-rata, varians, dll., seiring waktu. Data dalam kumpulan data tersebut mudah diramalkan karena sifatnya tidak berubah seiring waktu. 
 
 - Kumpulan data non-stasioner yaitu kumpulan data yang sifat statistiknya berubah seiring waktu . Jenis data ini tidak dapat diramalkan atau dimodelkan karena sifatnya yang bervariasi. Data non-stasioner memiliki tren, siklus, atau musiman di dalamnya. Gambar 3.5 menunjukkan contoh data stasioner dan non-stasioner.
 
-<img src="assets/time_series.png" width="400"/>
+<!-- <img src="assets/time_series.png" width="400"/> -->
+![gambar_s](assets/time_series.png)
 
 ### d. Data Spliting
 Pemisahan data berfungsi untuk melatih model ML dengan tepat. Pemisahan yang tepat mencegah model dari overfitting, memastikan penilaian yang tepat, dan meningkatkan kinerja model. 
@@ -311,7 +315,8 @@ Cara pemisahan data yang paling umum adalah
     
     - namun, konvensi pemisahan menjadi tiga subset juga sudah umum. Dalam kasus ini, dataset dibagi menjadi dataset pelatihan, validasi, dan pengujian. 
 
-<img src="assets/split.png" width="400"/>
+<!-- <img src="assets/split.png" width="400"/> -->
+![gambar_s](assets/split.png)
 
 ## 3. Tugas Mahasiswa
 
