@@ -1,8 +1,9 @@
 # Selamat Datang di Gramandha-docs 
-# Materi Perkuliahan Machine Learning
-# Kode MK TKE1686 - 3 SKS
 
-Dokumen ini dibuat untuk pembelajaran machine learning di Teknik Elektro, Universitas Jember
+Dokumen ini dibuat untuk materi perkuliahan machine learning di Teknik Elektro, Universitas Jember
+
+**Materi Perkuliahan Machine Learning**
+**Kode MK TKE1686 - 3 SKS**
 
 by Gramandha Wega Intyanto, S.ST., M.T.
 
