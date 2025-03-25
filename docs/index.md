@@ -1,4 +1,6 @@
-# Selamat Data di Dokumen Materi Machine Learning
+# Selamat Datang di Gramandha-docs 
+# Materi Perkuliahan Machine Learning
+# Kode MK TKE1686 - 3 SKS
 
 Dokumen ini dibuat untuk pembelajaran machine learning di Teknik Elektro, Universitas Jember
 
