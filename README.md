@@ -14,7 +14,8 @@ Daftar Isi
 
 1. [BAB 1: Pengantar *Machine Learning* pada bidang Teknik Elektro](docs/Materi1.md)
 2. [BAB 2: Dataset](docs/Materi2.md)
-3. [BAB 3: Klaster](docs/Materi3.md)
+3. [BAB 3: Klaster (K-Means, Hirarki, DBSCAN)](docs/Materi3.md)
+4. [BAB 4: Klasifikasi (K-NN dan Decision Tree)](docs/Materi4.md)
 
 
 
