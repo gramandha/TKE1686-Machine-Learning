@@ -4,14 +4,18 @@
 
 oleh Gramandha Wega Intyanto, S.ST., M.T.
 
-[Silabus, RPS, Kontrak kuliah Machine Learning](RPS_ML.pdf)
+
+[Silabus, RPS, Kontrak kuliah Machine Learning](docs/RPS_ML.pdf)
+
 
 Daftar Isi
 -----
 
+
 1. [BAB 1: Pengantar *Machine Learning* pada bidang Teknik Elektro](docs/Materi1.md)
 2. [BAB 2: Dataset](docs/Materi2.md)
 3. [BAB 3: Klaster](docs/Materi3.md)
+
 
 
 
