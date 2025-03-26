@@ -8,7 +8,7 @@ by Gramandha Wega Intyanto, S.ST., M.T.
 
 ----------
 
-## Dokumen : [Silabus, RPS, Kontrak Kuliah](https://gramandha.github.io/TKE1686-Machine-Learning/RPS_ML.pdf)
+## Dokumen : [Silabus, RPS, Kontrak Kuliah](RPS_ML.pdf)
 
 
 ## CPL 
