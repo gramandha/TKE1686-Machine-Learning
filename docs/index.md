@@ -1,11 +1,12 @@
 # Selamat Datang di Gramandha-docs 
+# Materi Perkuliahan Machine Learning
+# Kode MK TKE1686 - 3 SKS
 
-Dokumen ini dibuat untuk materi perkuliahan machine learning di Teknik Elektro, Universitas Jember
-
-**Materi Perkuliahan Machine Learning**
-**Kode MK TKE1686 - 3 SKS**
+Dokumen ini dibuat untuk pembelajaran machine learning di Teknik Elektro, Universitas Jember
 
 by Gramandha Wega Intyanto, S.ST., M.T.
+
+----------
 
 ## Dokumen : [Silabus, RPS, Kontrak Kuliah](https://gramandha.github.io/TKE1686-Machine-Learning/RPS_ML.pdf)
 
@@ -37,3 +38,15 @@ mempertimbangkan standar teknis, aspek kinerja, keandalan, kemudahan penerapan, 
 8. Mampu mengaplikasikan model yang dibuat
 9. Mampu menentukan, merumuskan, merancang, mengevaluasi dan menyimpulkan untuk project based machine learning
 
+Daftar Isi
+-----
+
+1. [BAB 1: Pengantar *Machine Learning* pada bidang Teknik Elektro](docs/Materi1.md)
+2. [BAB 2: Dataset](docs/Materi2.md)
+3. [BAB 3: Klaster](docs/Materi3.md)
+
+## Referensi
+1. Tom M. Mitchell, Machine Learning, McGraw-Hill, 1997
+2. Alberto Artasanchez dan Prateek Joshi, Artificial Intelligence with Python, Packt Publishing, 2020
+3. Aurelien Geron, Hands-On Machine Learning with Scikit-Learn, Keras, and Tensorflow: Concepts, Tool, and Techniques, O’Reilly Media, 2017
+4. Eklas Hossain, Machine Learning Course for Engineers, Springer, 2024
