@@ -4,8 +4,8 @@
 oleh: Gramandha Wega Intyanto, S.ST., M.T.
 
 **Algoritma Klasifikasi yang akan di pelajari**
-- _k-Nearest Neighbor_ (K-NN)
-- _Decision Tree_
+  - _k-Nearest Neighbor_ (K-NN)
+  - _Decision Tree_
 
 ## _K-Nearest Neighbor_ (K-NN)
 Metode k-Nearest Neighbor Classifier menentukan kelas/label dari suatu data uji
@@ -14,21 +14,23 @@ berdasarkan label dari data – data latih sekitarnya. Ilustrasi ditunjukkan pad
 ![gambar knn](assets/knn.png)
 
 Algoritma untuk k-nearest neighbor sebagai beirkut :
-1. Menentukan nilai k
-2. Menghitung jarak antara data baru terhadap semua training data
-3. Mengidentifikasi k nearest neighbor
-4. Menentukan label/kelas data baru berdasarkan kelas k-nearest neighbor (dapat menggunakan voting)
+
+  1. Menentukan nilai k
+  2. Menghitung jarak antara data baru terhadap semua training data
+  3. Mengidentifikasi k nearest neighbor
+  4. Menentukan label/kelas data baru berdasarkan kelas k-nearest neighbor (dapat menggunakan voting)
 
 Karakter dari algoritma k-nearest neighbor dapat dituliskan sebagai beirkut :
-1. Cocok untuk data numerik
-2. Mudah dipahami dan diimplementasikan
-3. k-NN merupakan lazy learner (tidak membangun model secara eksplisit)
-4. Penentuan label/kelas data baru membutuhkan computational cost yang
-cukup tinggi
-5. Perlu menentukan nilai k yang sesuai
-a. Jika k terlalu kecil, sensitif terhadap noise
-b. Jika k terlalu besar, nearest neigbor mungkin mencakup data dari
-kelas lain
+
+  1. Cocok untuk data numerik
+  2. Mudah dipahami dan diimplementasikan
+  3. k-NN merupakan lazy learner (tidak membangun model secara eksplisit)
+  4. Penentuan label/kelas data baru membutuhkan computational cost yang cukup tinggi
+  5. Perlu menentukan nilai k yang sesuai:
+
+    a. Jika k terlalu kecil, sensitif terhadap noise
+    b. Jika k terlalu besar, nearest neigbor mungkin mencakup data dari
+    kelas lain
 
 ### Video KNN Penejelasan K-NN
 [![Video YouTube](https://img.youtube.com/vi/0p0o5cmgLdE/0.jpg)](https://www.youtube.com/watch?v=0p0o5cmgLdE)         
@@ -131,12 +133,12 @@ min_samples_split, dengan penjelasan pada tabel dan gambar berikut
 
 ## LKM 4
 
-### **Soal Klasterisasi dengan k-NN dan Hierarchical Clustering**
+### **1. Soal Klasterisasi dengan k-means dan Hierarchical Clustering**
 
 #### **Deskripsi Soal**
 Sebuah perusahaan ingin mengelompokkan pelanggan berdasarkan pola pembelian mereka.  
 Data yang tersedia mencakup informasi **penghasilan bulanan (dalam juta rupiah)** dan **jumlah transaksi dalam sebulan**.  
-Gunakan **k-NN** dan **Hierarchical Clustering** untuk mengelompokkan pelanggan dan tentukan pola yang terbentuk.  
+Gunakan **k-means** dan **Hierarchical Clustering** untuk mengelompokkan pelanggan dan tentukan pola yang terbentuk.  
 
 #### **Data Pelanggan**
 
@@ -156,19 +158,19 @@ Gunakan **k-NN** dan **Hierarchical Clustering** untuk mengelompokkan pelanggan 
 ---
 
 #### **Tugas**
-##### **1. K-NN Clustering**
+##### **a. K-means Clustering**
 - Jika kita sudah memiliki klaster awal dengan pusat klaster sebagai berikut:
   - **Klaster 1**: (2.5, 4)
   - **Klaster 2**: (7.5, 22)
-- Gunakan metode **k-NN** untuk mengelompokkan pelanggan ke dalam salah satu dari klaster tersebut berdasarkan jarak Euclidean.
+- Gunakan metode **k-means** untuk mengelompokkan pelanggan ke dalam salah satu dari klaster tersebut berdasarkan jarak Euclidean.
 - Tentukan klaster akhir setelah semua pelanggan dikategorikan.
 
-##### **2. Hierarchical Clustering**
+##### **b. Hierarchical Clustering**
 - Gunakan metode **Agglomerative Hierarchical Clustering** dengan pendekatan **Single Linkage** atau **Complete Linkage**.
 - Buat **dendrogram** untuk menunjukkan proses penggabungan klaster hingga terbentuk satu klaster besar.
 - Tentukan **jumlah klaster optimal** berdasarkan dendrogram.
 
-### **Soal Klasifikasi dengan k-NN dan Decision Tree**
+### **2. Soal Klasifikasi dengan k-NN dan Decision Tree**
 
 ### **Deskripsi Soal**
 Sebuah bank ingin mengklasifikasikan calon nasabah ke dalam kategori **"Layak Kredit"** atau **"Tidak Layak Kredit"** berdasarkan beberapa parameter.  
@@ -195,14 +197,14 @@ Gunakan **k-NN** dan **Decision Tree** untuk melakukan klasifikasi dan tentukan 
 ---
 
 ### **Tugas**
-#### **1. K-NN Classification**
+#### **a. K-NN Classification**
 - Gunakan metode **k-Nearest Neighbors (k-NN)** untuk mengklasifikasikan nasabah baru dengan fitur berikut:
   - **Penghasilan** = 4.5 juta rupiah  
   - **Pinjaman Aktif** = 9 juta rupiah  
   - **Status Pekerjaan** = Kontrak  
 - Gunakan **k = 3** dan hitung **jarak Euclidean** untuk menentukan kelas nasabah tersebut.
 
-#### **2. Decision Tree Classification**
+#### **b. Decision Tree Classification**
 - Gunakan metode **Decision Tree** untuk membangun model klasifikasi berdasarkan fitur yang tersedia.
 - Gambarkan struktur **decision tree** yang terbentuk.
 - Gunakan model untuk memprediksi status kredit nasabah dengan parameter berikut:
