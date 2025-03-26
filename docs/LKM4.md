@@ -1,6 +1,6 @@
 # LKM 4
 
-## **Soal Klasterisasi dengan k-NN dan Hierarchical Clustering**
+## **1. Soal Klasterisasi dengan k-NN dan Hierarchical Clustering**
 
 ### **Deskripsi Soal**
 Sebuah perusahaan ingin mengelompokkan pelanggan berdasarkan pola pembelian mereka.  
@@ -25,19 +25,19 @@ Gunakan **k-NN** dan **Hierarchical Clustering** untuk mengelompokkan pelanggan 
 ---
 
 ### **Tugas**
-#### **1. K-NN Clustering**
+#### **a. K-NN Clustering**
 - Jika kita sudah memiliki klaster awal dengan pusat klaster sebagai berikut:
   - **Klaster 1**: (2.5, 4)
   - **Klaster 2**: (7.5, 22)
 - Gunakan metode **k-NN** untuk mengelompokkan pelanggan ke dalam salah satu dari klaster tersebut berdasarkan jarak Euclidean.
 - Tentukan klaster akhir setelah semua pelanggan dikategorikan.
 
-#### **2. Hierarchical Clustering**
+#### **b. Hierarchical Clustering**
 - Gunakan metode **Agglomerative Hierarchical Clustering** dengan pendekatan **Single Linkage** atau **Complete Linkage**.
 - Buat **dendrogram** untuk menunjukkan proses penggabungan klaster hingga terbentuk satu klaster besar.
 - Tentukan **jumlah klaster optimal** berdasarkan dendrogram.
 
-## **Soal Klasifikasi dengan k-NN dan Decision Tree**
+## **2. Soal Klasifikasi dengan k-NN dan Decision Tree**
 
 ### **Deskripsi Soal**
 Sebuah bank ingin mengklasifikasikan calon nasabah ke dalam kategori **"Layak Kredit"** atau **"Tidak Layak Kredit"** berdasarkan beberapa parameter.  
@@ -64,14 +64,14 @@ Gunakan **k-NN** dan **Decision Tree** untuk melakukan klasifikasi dan tentukan 
 ---
 
 ### **Tugas**
-#### **1. K-NN Classification**
+#### **a. K-NN Classification**
 - Gunakan metode **k-Nearest Neighbors (k-NN)** untuk mengklasifikasikan nasabah baru dengan fitur berikut:
   - **Penghasilan** = 4.5 juta rupiah  
   - **Pinjaman Aktif** = 9 juta rupiah  
   - **Status Pekerjaan** = Kontrak  
 - Gunakan **k = 3** dan hitung **jarak Euclidean** untuk menentukan kelas nasabah tersebut.
 
-#### **2. Decision Tree Classification**
+#### **b. Decision Tree Classification**
 - Gunakan metode **Decision Tree** untuk membangun model klasifikasi berdasarkan fitur yang tersedia.
 - Gambarkan struktur **decision tree** yang terbentuk.
 - Gunakan model untuk memprediksi status kredit nasabah dengan parameter berikut:
