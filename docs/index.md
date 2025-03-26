@@ -46,6 +46,7 @@ Daftar Isi
 1. [BAB 1: Pengantar *Machine Learning* pada bidang Teknik Elektro](docs/Materi1.md)
 2. [BAB 2: Dataset](docs/Materi2.md)
 3. [BAB 3: Klaster](docs/Materi3.md)
+4. [BAB 3: Klasifikasi](docs/Materi4.md)
 
 ## Referensi
 1. Tom M. Mitchell, Machine Learning, McGraw-Hill, 1997
