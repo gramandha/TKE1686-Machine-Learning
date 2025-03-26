@@ -1,11 +1,11 @@
 # LKM 4
 
-## **1. Soal Klasterisasi dengan k-NN dan Hierarchical Clustering**
+## **1. Soal Klasterisasi dengan K-means dan Hierarchical Clustering**
 
 ### **Deskripsi Soal**
 Sebuah perusahaan ingin mengelompokkan pelanggan berdasarkan pola pembelian mereka.  
 Data yang tersedia mencakup informasi **penghasilan bulanan (dalam juta rupiah)** dan **jumlah transaksi dalam sebulan**.  
-Gunakan **k-NN** dan **Hierarchical Clustering** untuk mengelompokkan pelanggan dan tentukan pola yang terbentuk.  
+Gunakan **K-means** dan **Hierarchical Clustering** untuk mengelompokkan pelanggan dan tentukan pola yang terbentuk.  
 
 ### **Data Pelanggan**
 
@@ -25,11 +25,11 @@ Gunakan **k-NN** dan **Hierarchical Clustering** untuk mengelompokkan pelanggan 
 ---
 
 ### **Tugas**
-#### **a. K-NN Clustering**
+#### **a. K-means Clustering**
 - Jika kita sudah memiliki klaster awal dengan pusat klaster sebagai berikut:
   - **Klaster 1**: (2.5, 4)
   - **Klaster 2**: (7.5, 22)
-- Gunakan metode **k-NN** untuk mengelompokkan pelanggan ke dalam salah satu dari klaster tersebut berdasarkan jarak Euclidean.
+- Gunakan metode **K-means** untuk mengelompokkan pelanggan ke dalam salah satu dari klaster tersebut berdasarkan jarak Euclidean.
 - Tentukan klaster akhir setelah semua pelanggan dikategorikan.
 
 #### **b. Hierarchical Clustering**
