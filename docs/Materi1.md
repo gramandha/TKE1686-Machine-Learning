@@ -1,4 +1,4 @@
-# Pertemuan 1: Pengantar *Machine Learning* pada bidang Teknik Elektro
+# Pertemuan 2: Pengantar *Machine Learning* pada bidang Teknik Elektro
 
 **[TKE1686] MK Machine Learning (3-SKS)**
 

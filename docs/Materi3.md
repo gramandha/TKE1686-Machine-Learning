@@ -1,4 +1,4 @@
-# Pertemuan 3-4: Klaster (K-Means, Hirarki Klaster, DBSCAN)
+# Pertemuan 4-5: Klaster (K-Means, Hirarki Klaster, DBSCAN)
 
 **[TKE1686] MK Machine Learning (3-SKS)**
 

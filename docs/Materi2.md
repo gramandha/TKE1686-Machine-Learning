@@ -1,4 +1,4 @@
-# Pertemuan 2: Pengumpulan, Pemrosesan dan Visualisasi pada Dataset
+# Pertemuan 3: Pengumpulan, Pemrosesan dan Visualisasi pada Dataset
 
 **[TKE1686] MK Machine Learning (3-SKS)**
 
