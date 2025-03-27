@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>LKM 4 - Machine Learning</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "LKM 4";
+        var mkdocs_page_input_path = "LKM4.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Machine Learning
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Materi</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../Materi1/">Pertemuan 2: Pengantar Machine Learning pada bidang Teknik Elektro</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Materi2/">Pertemuan 3: Pengumpulan, Pemrosesan dan Visualisasi pada Dataset</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Materi3/">Pertemuan 4-5: Klaster (K-Means, Hirarki Klaster, DBSCAN)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Materi4/">Pertemuan 6: Klasifikasi</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Tugas</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../LKM1/">LKM 1</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../LKM2/">LKM 2</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../LKM3/">LKM 3</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">LKM 4</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#1-soal-klasterisasi-dengan-k-means-dan-hierarchical-clustering">1. Soal Klasterisasi dengan K-means dan Hierarchical Clustering</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#deskripsi-soal">Deskripsi Soal</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#data-pelanggan">Data Pelanggan</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#tugas">Tugas</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#a-k-means-clustering">a. K-means Clustering</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#b-hierarchical-clustering">b. Hierarchical Clustering</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2-soal-klasifikasi-dengan-k-nn-dan-decision-tree">2. Soal Klasifikasi dengan k-NN dan Decision Tree</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#deskripsi-soal_1">Deskripsi Soal</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#data-nasabah">Data Nasabah</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#tugas_1">Tugas</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#a-k-nn-classification">a. K-NN Classification</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#b-decision-tree-classification">b. Decision Tree Classification</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Machine Learning</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Tugas</li>
+      <li class="breadcrumb-item active">LKM 4</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/gramandha/TKE1686-Machine-Learning/edit/master/docs/LKM4.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="lkm-4">LKM 4</h1>
+<h2 id="1-soal-klasterisasi-dengan-k-means-dan-hierarchical-clustering"><strong>1. Soal Klasterisasi dengan K-means dan Hierarchical Clustering</strong></h2>
+<h3 id="deskripsi-soal"><strong>Deskripsi Soal</strong></h3>
+<p>Sebuah perusahaan ingin mengelompokkan pelanggan berdasarkan pola pembelian mereka.<br />
+Data yang tersedia mencakup informasi <strong>penghasilan bulanan (dalam juta rupiah)</strong> dan <strong>jumlah transaksi dalam sebulan</strong>.<br />
+Gunakan <strong>K-means</strong> dan <strong>Hierarchical Clustering</strong> untuk mengelompokkan pelanggan dan tentukan pola yang terbentuk.  </p>
+<h3 id="data-pelanggan"><strong>Data Pelanggan</strong></h3>
+<table>
+<thead>
+<tr>
+<th>ID Pelanggan</th>
+<th>Penghasilan (Juta Rupiah)</th>
+<th>Jumlah Transaksi per Bulan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P1</td>
+<td>3.5</td>
+<td>5</td>
+</tr>
+<tr>
+<td>P2</td>
+<td>7.0</td>
+<td>20</td>
+</tr>
+<tr>
+<td>P3</td>
+<td>2.0</td>
+<td>3</td>
+</tr>
+<tr>
+<td>P4</td>
+<td>5.5</td>
+<td>10</td>
+</tr>
+<tr>
+<td>P5</td>
+<td>8.0</td>
+<td>25</td>
+</tr>
+<tr>
+<td>P6</td>
+<td>1.5</td>
+<td>2</td>
+</tr>
+<tr>
+<td>P7</td>
+<td>6.0</td>
+<td>12</td>
+</tr>
+<tr>
+<td>P8</td>
+<td>9.5</td>
+<td>30</td>
+</tr>
+<tr>
+<td>P9</td>
+<td>4.0</td>
+<td>7</td>
+</tr>
+<tr>
+<td>P10</td>
+<td>3.0</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="tugas"><strong>Tugas</strong></h3>
+<h4 id="a-k-means-clustering"><strong>a. K-means Clustering</strong></h4>
+<ul>
+<li>Jika kita sudah memiliki klaster awal dengan pusat klaster sebagai berikut:</li>
+<li><strong>Klaster 1</strong>: (2.5, 4)</li>
+<li><strong>Klaster 2</strong>: (7.5, 22)</li>
+<li>Gunakan metode <strong>K-means</strong> untuk mengelompokkan pelanggan ke dalam salah satu dari klaster tersebut berdasarkan jarak Euclidean.</li>
+<li>Tentukan klaster akhir setelah semua pelanggan dikategorikan.</li>
+</ul>
+<h4 id="b-hierarchical-clustering"><strong>b. Hierarchical Clustering</strong></h4>
+<ul>
+<li>Gunakan metode <strong>Agglomerative Hierarchical Clustering</strong> dengan pendekatan <strong>Single Linkage</strong> atau <strong>Complete Linkage</strong>.</li>
+<li>Buat <strong>dendrogram</strong> untuk menunjukkan proses penggabungan klaster hingga terbentuk satu klaster besar.</li>
+<li>Tentukan <strong>jumlah klaster optimal</strong> berdasarkan dendrogram.</li>
+</ul>
+<h2 id="2-soal-klasifikasi-dengan-k-nn-dan-decision-tree"><strong>2. Soal Klasifikasi dengan k-NN dan Decision Tree</strong></h2>
+<h3 id="deskripsi-soal_1"><strong>Deskripsi Soal</strong></h3>
+<p>Sebuah bank ingin mengklasifikasikan calon nasabah ke dalam kategori <strong>"Layak Kredit"</strong> atau <strong>"Tidak Layak Kredit"</strong> berdasarkan beberapa parameter.<br />
+Data yang tersedia mencakup <strong>penghasilan bulanan</strong>, <strong>jumlah pinjaman yang sedang berjalan</strong>, dan <strong>status pekerjaan</strong>.<br />
+Gunakan <strong>k-NN</strong> dan <strong>Decision Tree</strong> untuk melakukan klasifikasi dan tentukan pola yang terbentuk.</p>
+<hr />
+<h3 id="data-nasabah"><strong>Data Nasabah</strong></h3>
+<table>
+<thead>
+<tr>
+<th>ID Nasabah</th>
+<th>Penghasilan (Juta Rupiah)</th>
+<th>Pinjaman Aktif (Juta)</th>
+<th>Status Pekerjaan</th>
+<th>Status Kredit (Label)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>N1</td>
+<td>5.0</td>
+<td>10</td>
+<td>Tetap</td>
+<td>Layak Kredit</td>
+</tr>
+<tr>
+<td>N2</td>
+<td>2.5</td>
+<td>5</td>
+<td>Kontrak</td>
+<td>Tidak Layak Kredit</td>
+</tr>
+<tr>
+<td>N3</td>
+<td>7.0</td>
+<td>20</td>
+<td>Tetap</td>
+<td>Layak Kredit</td>
+</tr>
+<tr>
+<td>N4</td>
+<td>3.0</td>
+<td>8</td>
+<td>Kontrak</td>
+<td>Tidak Layak Kredit</td>
+</tr>
+<tr>
+<td>N5</td>
+<td>6.0</td>
+<td>15</td>
+<td>Tetap</td>
+<td>Layak Kredit</td>
+</tr>
+<tr>
+<td>N6</td>
+<td>4.0</td>
+<td>12</td>
+<td>Kontrak</td>
+<td>Tidak Layak Kredit</td>
+</tr>
+<tr>
+<td>N7</td>
+<td>8.5</td>
+<td>25</td>
+<td>Tetap</td>
+<td>Layak Kredit</td>
+</tr>
+<tr>
+<td>N8</td>
+<td>3.5</td>
+<td>6</td>
+<td>Kontrak</td>
+<td>Tidak Layak Kredit</td>
+</tr>
+<tr>
+<td>N9</td>
+<td>6.5</td>
+<td>18</td>
+<td>Tetap</td>
+<td>Layak Kredit</td>
+</tr>
+<tr>
+<td>N10</td>
+<td>2.0</td>
+<td>4</td>
+<td>Kontrak</td>
+<td>Tidak Layak Kredit</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="tugas_1"><strong>Tugas</strong></h3>
+<h4 id="a-k-nn-classification"><strong>a. K-NN Classification</strong></h4>
+<ul>
+<li>Gunakan metode <strong>k-Nearest Neighbors (k-NN)</strong> untuk mengklasifikasikan nasabah baru dengan fitur berikut:</li>
+<li><strong>Penghasilan</strong> = 4.5 juta rupiah  </li>
+<li><strong>Pinjaman Aktif</strong> = 9 juta rupiah  </li>
+<li><strong>Status Pekerjaan</strong> = Kontrak  </li>
+<li>Gunakan <strong>k = 3</strong> dan hitung <strong>jarak Euclidean</strong> untuk menentukan kelas nasabah tersebut.</li>
+</ul>
+<h4 id="b-decision-tree-classification"><strong>b. Decision Tree Classification</strong></h4>
+<ul>
+<li>Gunakan metode <strong>Decision Tree</strong> untuk membangun model klasifikasi berdasarkan fitur yang tersedia.</li>
+<li>Gambarkan struktur <strong>decision tree</strong> yang terbentuk.</li>
+<li>Gunakan model untuk memprediksi status kredit nasabah dengan parameter berikut:</li>
+<li><strong>Penghasilan</strong> = 6.0 juta rupiah  </li>
+<li><strong>Pinjaman Aktif</strong> = 14 juta rupiah  </li>
+<li><strong>Status Pekerjaan</strong> = Tetap  </li>
+</ul>
+<hr />
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../LKM3/" class="btn btn-neutral float-left" title="LKM 3"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/gramandha/TKE1686-Machine-Learning" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../LKM3/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
