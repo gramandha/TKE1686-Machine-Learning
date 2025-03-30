@@ -2,6 +2,9 @@ site_name: Machine Learning
 theme: readthedocs
 # repo_name: gramandha/gramandha-docs
 repo_url: https://github.com/gramandha/TKE1686-Machine-Learning
+plugins:
+  - mermaid2
+
 markdown_extensions:
   - pymdownx.superfences:
       custom_fences:
@@ -18,7 +21,8 @@ markdown_extensions:
       generic: true
 
 extra_javascript:
-  - https://unpkg.com/mermaid@10/dist/mermaid.min.js
+  # - https://unpkg.com/mermaid@10/dist/mermaid.min.js
+  - https://unpkg.com/mermaid@10.9.3/dist/mermaid.min.js
 nav:
   - Home: index.md
   - Materi:
