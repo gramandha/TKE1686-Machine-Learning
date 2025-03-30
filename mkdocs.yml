@@ -3,14 +3,17 @@ theme: readthedocs
 # repo_name: gramandha/gramandha-docs
 repo_url: https://github.com/gramandha/TKE1686-Machine-Learning
 plugins:
-  - mermaid2
+    - search
+    - mermaid2:
+      version: 10.0.2
+
 
 markdown_extensions:
   - pymdownx.superfences:
-      custom_fences:
+       custom_fences:
         - name: mermaid
           class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
+          format: !!python/name:mermaid2.fence_mermaid_custom
   - pymdownx.tabbed
   - pymdownx.tasklist
   - pymdownx.details
