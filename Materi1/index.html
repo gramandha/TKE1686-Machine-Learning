@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Pertemuan 2: Pengantar Machine Learning pada bidang Teknik Elektro - Machine Learning</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Pertemuan 2: Pengantar Machine Learning pada bidang Teknik Elektro";
+        var mkdocs_page_input_path = "Materi1.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Machine Learning
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Materi</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Pertemuan 2: Pengantar Machine Learning pada bidang Teknik Elektro</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#1-definisi-machine-learning">1. Definisi Machine Learning</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#definisi-dari-beberapa-ahli">Definisi dari beberapa ahli</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2-sejarah-singkat-machine-learning">2. Sejarah Singkat Machine Learning</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#1950-an">1950-an:</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#1970-an-sd-1980-an">1970-an s.d. 1980-an:</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#1990-an">1990-an:</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2000-an-sd-sekarang">2000-an s.d. Sekarang:</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#3-klasifikasi-machine-learning-yang-akan-di-pelajari">3. Klasifikasi Machine Learning yang akan di pelajari</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#supervised-learning">Supervised Learning</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#unsupervised-learning">Unsupervised Learning</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#contoh-dataset-ml">Contoh dataset ML</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#3-peran-machine-learning-dalam-teknik-elektro">3. Peran Machine Learning dalam Teknik Elektro</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#a-pemrosesan-sinyal-dan-citra-digital">a. Pemrosesan Sinyal dan Citra Digital</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#b-sistem-kendali-dan-otomasi">b. Sistem Kendali dan Otomasi</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#c-prediksi-dan-optimasi-dalam-jaringan-listrik">c. Prediksi dan Optimasi dalam Jaringan Listrik</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#d-machine-learning-dalam-embedded-systems">d. Machine Learning dalam Embedded Systems</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#e-keamanan-dan-deteksi-anomali">e. Keamanan dan Deteksi Anomali</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#4-tools-yang-digunakan-untuk-ml">4. Tools yang digunakan untuk ML</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#4-tugas-mahasiswa">4. Tugas Mahasiswa</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Materi2/">Pertemuan 3: Pengumpulan, Pemrosesan dan Visualisasi pada Dataset</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Materi3/">Pertemuan 4-5: Klaster (K-Means, Hirarki Klaster, DBSCAN)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Materi4/">Pertemuan 6: Klasifikasi</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Tugas</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../LKM1/">LKM 1</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../LKM2/">LKM 2</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../LKM3/">LKM 3</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../LKM4/">LKM 4</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Machine Learning</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Materi</li>
+      <li class="breadcrumb-item active">Pertemuan 2: Pengantar Machine Learning pada bidang Teknik Elektro</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/gramandha/TKE1686-Machine-Learning/edit/master/docs/Materi1.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="pertemuan-2-pengantar-machine-learning-pada-bidang-teknik-elektro">Pertemuan 2: Pengantar <em>Machine Learning</em> pada bidang Teknik Elektro</h1>
+<p><strong>[TKE1686] MK Machine Learning (3-SKS)</strong></p>
+<p>oleh Gramandha Wega Intyanto</p>
+<h2 id="1-definisi-machine-learning">1. Definisi Machine Learning</h2>
+<p>Machine Learning (ML) adalah cabang dari kecerdasan buatan (Artificial Intelligence, AI) yang memungkinkan sistem untuk belajar dari data tanpa diprogram secara eksplisit. ML menggunakan algoritma dan model statistik untuk mengenali pola dalam data dan membuat keputusan atau prediksi berdasarkan pola tersebut.</p>
+<h3 id="definisi-dari-beberapa-ahli">Definisi dari beberapa ahli</h3>
+<blockquote>
+<p><strong>Arthur Samuel (1959)</strong>: "<em>Machine Learning</em> adalah bidang studi terkait pemberian kemampuan pada komputer untuk belajar tanpa diprogram secara eksplisit."</p>
+<p><strong>Tom Mitchell (1997)</strong>: 
+"<em>Machine Learning</em> adalah suatu program komputer yang belajar dari pengalaman <em>(experience E)</em> terhadap tugas <em>(Task T)</em> dengan ukuran performa <em>(performance P)</em>, jika performanya terhadap tugas <em>(Task T)</em> meningkat dengan pengalaman <em>(experience E)</em>."</p>
+</blockquote>
+<p>Dapat disimpulkan bahwa <strong>machine learning</strong> merupakan bidang ilmu yang mempelajari dari data dan mengeksekusi hasil dari pembelajaran data tersebut.</p>
+<h2 id="2-sejarah-singkat-machine-learning">2. Sejarah Singkat Machine Learning</h2>
+<h3 id="1950-an">1950-an:</h3>
+<ul>
+<li>Alan Turing memperkenalkan Turing Test untuk mengukur kecerdasan mesin.</li>
+<li>Frank Rosenblatt mengembangkan perceptron, model awal dari neural network.</li>
+</ul>
+<h3 id="1970-an-sd-1980-an">1970-an s.d. 1980-an:</h3>
+<ul>
+<li>Pengembangan algoritma decision tree dan neural network pertama.</li>
+<li>Backpropagation mulai digunakan dalam pelatihan neural network.</li>
+</ul>
+<h3 id="1990-an">1990-an:</h3>
+<ul>
+<li>Munculnya Support Vector Machine (SVM) dan Random Forest sebagai metode klasifikasi canggih.</li>
+<li>Mulai berkembangnya aplikasi ML dalam pattern recognition dan data mining.</li>
+</ul>
+<h3 id="2000-an-sd-sekarang">2000-an s.d. Sekarang:</h3>
+<ul>
+<li>Kemajuan dalam Deep Learning dan Neural Networks berkat peningkatan daya komputasi dan ketersediaan big data.</li>
+<li>Model seperti Convolutional Neural Network (CNN) dan Recurrent Neural Network (RNN) menjadi dasar dalam pengolahan citra dan sinyal.</li>
+<li>Aplikasi ML berkembang pesat di berbagai bidang, termasuk kesehatan, finansial, transportasi, dan teknik elektro.</li>
+</ul>
+<h2 id="3-klasifikasi-machine-learning-yang-akan-di-pelajari">3. Klasifikasi Machine Learning yang akan di pelajari</h2>
+<p>Ditarik dari permasalahan pembelajaran <em>(learning problem)</em> dalam konteks ML pada dataset (sejumlah <em>n</em> sample data) untuk melakukan prediksi terhadap properties yang tidak diketahui pada dataset lain yang sejenis. 
+Secara umum untuk penyelesain permasalahan pembelajaran, <em>Machine Learning</em> dibagi menjadi dua teknik dasar yang akan kita pelajari pada mata kuliah (2), yaitu <strong>supervised learning</strong> dan <strong>unsupervised learning</strong></p>
+<h3 id="supervised-learning">Supervised Learning</h3>
+<p>Teknik atau model pembelajaran yang diterapkan pada mesin dari pola dalam data yang memiliki label tertentu</p>
+<p>contoh kasus: 
+1. Deteksi kesalah paa jaringan listrik, dimana data yang dimiliki yaitu tegangan, arus, frekuensi dalam jaringan. Kemudian tiap data memiliki label jaringan berstatus: <strong>Normal</strong> dan <strong>Gangguan</strong>
+2. Robot akan melakukan klasifikasi jenis bunga, dimana data yang memiliki kelopak bunga, bentuk kelopak, warna, dsb. Kemudian tiap data memiliki label jenis bunga:  <strong>Mawar</strong> dan <strong>Bunga Matahari</strong></p>
+<p>Pada supervised learning ini pada umumnya memiliki minimal 2 data, data input yaitu pola pada data dan data output yaitu kategori (label).</p>
+<p><img src="https://media.geeksforgeeks.org/wp-content/uploads/20241022160725494723/supervised-machine-learning.webp" width="500">
+source : geeksforgeeks</p>
+<p>Tipe dari <em>Supervised Learning</em> yaitu:</p>
+<ol>
+<li>Klasifikasi: Di mana output adalah variabel kategoris (mis., Email spam vs non-spam, ya vs tidak). </li>
+<li>Regresi: Di mana output adalah variabel kontinu (mis., Memprediksi harga rumah, harga saham).</li>
+</ol>
+<p>Contoh algoritma atau model yang sering digunakan pada bidang elektro yaitu Regresi, Suppert Vector Machine (SVM), K-Nearest Neighbors (K-NN), Random Forest biasanya digunakan untuk klasifikasi, dsb.</p>
+<p>Berikut contoh algoritma yang lebih lengkap terkait <em>Supervised Learning</em></p>
+<table>
+<thead>
+<tr>
+<th>Algoritma</th>
+<th>Regresi, Klasifikasi</th>
+<th>Tujuan</th>
+<th>Metode</th>
+<th>Kasus Penggunaan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Regresi Linear</strong></td>
+<td>Regresi</td>
+<td>Memprediksi nilai output kontinu</td>
+<td>Persamaan linear yang meminimalkan jumlah kuadrat residu</td>
+<td>Memprediksi nilai kontinu</td>
+</tr>
+<tr>
+<td>Regresi Logistik</td>
+<td>Klasifikasi</td>
+<td>Memprediksi variabel output biner</td>
+<td>Fungsi logistik yang mentransformasikan hubungan linear</td>
+<td>Tugas klasifikasi biner</td>
+</tr>
+<tr>
+<td>Pohon Keputusan</td>
+<td>Keduanya</td>
+<td>Memodelkan keputusan dan hasil</td>
+<td>Struktur pohon dengan keputusan dan hasil</td>
+<td>Tugas klasifikasi dan regresi</td>
+</tr>
+<tr>
+<td>Random Forest</td>
+<td>Keduanya</td>
+<td>Meningkatkan akurasi klasifikasi dan regresi</td>
+<td>Menggabungkan beberapa pohon keputusan</td>
+<td>Mengurangi overfitting, meningkatkan akurasi prediksi</td>
+</tr>
+<tr>
+<td><strong>SVM</strong></td>
+<td>Keduanya</td>
+<td>Membuat hyperplane untuk klasifikasi atau prediksi nilai kontinu</td>
+<td>Memaksimalkan margin antara kelas atau memprediksi nilai kontinu</td>
+<td>Tugas klasifikasi dan regresi</td>
+</tr>
+<tr>
+<td><strong>KNN</strong></td>
+<td>Keduanya</td>
+<td>Memprediksi kelas atau nilai berdasarkan k tetangga terdekat</td>
+<td>Mencari k tetangga terdekat dan memprediksi berdasarkan mayoritas atau rata-rata</td>
+<td>Tugas klasifikasi dan regresi, sensitif terhadap data berisik</td>
+</tr>
+<tr>
+<td>Gradient Boosting</td>
+<td>Keduanya</td>
+<td>Menggabungkan model lemah untuk membuat model yang kuat</td>
+<td>Mengoreksi kesalahan secara iteratif dengan model baru</td>
+<td>Tugas klasifikasi dan regresi untuk meningkatkan akurasi prediksi</td>
+</tr>
+<tr>
+<td>Naive Bayes</td>
+<td>Klasifikasi</td>
+<td>Memprediksi kelas berdasarkan asumsi independensi fitur</td>
+<td>Teorema Bayes dengan asumsi independensi fitur</td>
+<td>Klasifikasi teks, penyaringan spam, analisis sentimen, medis</td>
+</tr>
+</tbody>
+</table>
+<h3 id="unsupervised-learning">Unsupervised Learning</h3>
+<p>Teknik atau model pembelajaran yang diterapkan pada mesin dari pola dalam data yang tidak memiliki label tertentu</p>
+<p>Contoh kasus</p>
+<p>Operator jaringan lisrik ingin mengkelompokkan pelanggan berdasarkan pola komsumsi energi untuk meningkatan efiseiensi ditribusi daya. </p>
+<p>Pada <em>unsupervised learning</em> ini pada umumnya memiliki minimal 1 data, data input yaitu pola pada data.</p>
+<p><img src="https://media.geeksforgeeks.org/wp-content/uploads/20231124111325/Unsupervised-learning.png" width="500">
+source : geeksforgeeks</p>
+<p>Tipe dari <em>Unsupervised Learning</em> yaitu:</p>
+<ol>
+<li><strong>Clustering Algorithms</strong> : Pengelompokan dalam pembelajaran mesin tanpa pengawasan adalah proses pengelompokan data yang tidak berlabel ke dalam kelompok berdasarkan kesamaan mereka. Tujuan pengelompokan adalah untuk mengidentifikasi pola dan hubungan dalam data tanpa pengetahuan sebelumnya tentang makna data. </li>
+<li>Association Rule Learning : Pembelajaran aturan asosiasi juga dikenal sebagai penambangan aturan asosiasi adalah teknik umum yang digunakan untuk menemukan asosiasi dalam pembelajaran mesin tanpa pengawasan.</li>
+<li>Dimensionality Reduction : Pengurangan dimensi adalah proses mengurangi jumlah fitur dalam dataset sambil menjaga informasi sebanyak mungkin. Teknik ini berguna untuk meningkatkan kinerja algoritma pembelajaran mesin dan untuk visualisasi data.</li>
+</ol>
+<p>Contoh algoritma atau model yang digunakan pada yaitu K-means cluster</p>
+<h4 id="contoh-dataset-ml">Contoh dataset ML</h4>
+<p>Supervised</p>
+<p><img src="https://ilmudatapy.com/wp-content/uploads/2020/07/klasifikasi-1.png" width="250"></p>
+<p>Unsupervised</p>
+<p><img src="assets/dataset_image.png" width="250"></p>
+<h2 id="3-peran-machine-learning-dalam-teknik-elektro">3. Peran Machine Learning dalam Teknik Elektro</h2>
+<p>Machine Learning memiliki peran penting dalam berbagai aspek Teknik Elektro, termasuk pemrosesan sinyal, pengendalian sistem, dan optimasi kinerja perangkat elektronik. Beberapa penerapan utama ML dalam Teknik Elektro adalah:</p>
+<h3 id="a-pemrosesan-sinyal-dan-citra-digital">a. Pemrosesan Sinyal dan Citra Digital</h3>
+<ul>
+<li>Deteksi dan klasifikasi sinyal menggunakan Fourier Transform dan Wavelet Transform.</li>
+<li>Pengenalan pola dalam sinyal kelistrikan, seperti fault detection dalam jaringan listrik.</li>
+<li>Penerapan ML dalam pengolahan citra digital untuk mendeteksi objek atau menganalisis data dari kamera industri.</li>
+</ul>
+<h3 id="b-sistem-kendali-dan-otomasi">b. Sistem Kendali dan Otomasi</h3>
+<ul>
+<li>Machine Learning digunakan dalam sistem kontrol adaptif, misalnya pada robotik dan otomasi industri.</li>
+<li>Peningkatan efisiensi sistem kendali berbasis fuzzy logic dan neural network.</li>
+</ul>
+<h3 id="c-prediksi-dan-optimasi-dalam-jaringan-listrik">c. Prediksi dan Optimasi dalam Jaringan Listrik</h3>
+<ul>
+<li>Memprediksi konsumsi daya listrik menggunakan time-series forecasting.</li>
+<li>Optimasi distribusi daya menggunakan ML untuk meningkatkan efisiensi grid listrik.</li>
+</ul>
+<h3 id="d-machine-learning-dalam-embedded-systems">d. Machine Learning dalam Embedded Systems</h3>
+<ul>
+<li>Implementasi TinyML (Machine Learning pada perangkat dengan daya rendah seperti mikroprosesor dan FPGA).</li>
+<li>Aplikasi ML dalam Internet of Things (IoT) untuk sistem pemantauan cerdas.</li>
+</ul>
+<h3 id="e-keamanan-dan-deteksi-anomali">e. Keamanan dan Deteksi Anomali</h3>
+<ul>
+<li>Pendeteksian anomali dalam jaringan listrik untuk mencegah blackout atau gangguan listrik.</li>
+<li>Sistem keamanan berbasis ML dalam deteksi peretasan jaringan komunikasi dan kendali.</li>
+</ul>
+<h2 id="4-tools-yang-digunakan-untuk-ml">4. Tools yang digunakan untuk ML</h2>
+<p>Pada akhir tahun ini perancangan ML bahasa program yang sering digunakan yaitu Python dengan beberapa tools library berikut:</p>
+<p>Framework dan Library ML
+- <a href="https://www.tensorflow.org/">TensorFlow</a> : Framework open-source untuk deep learning dan ML yang dikembangkan oleh Google.
+- <a href="https://pytorch.org/">PyTorch</a>  :   Framework ML berbasis Python dengan fleksibilitas tinggi, dikembangkan oleh Facebook AI.
+- <a href="https://scikit-learn.org/">Scikit-learn</a> : Library ML berbasis Python untuk klasifikasi, regresi, dan clustering.
+- <a href="https://keras.io/">Keras</a>  :   API tinggi berbasis TensorFlow untuk pengembangan model deep learning.</p>
+<p>Tools untuk Pemrosesan Data dan Visualisasi
+- <a href="https://pandas.pydata.org/">Pandas</a> :   Library Python untuk manipulasi dan analisis data berbasis tabel.
+- <a href="https://numpy.org/">NumPy</a> :   Library untuk operasi numerik dan array multidimensi dalam Python.
+- <a href="https://matplotlib.org/">Matplotlib</a> : Library visualisasi untuk membuat grafik dan plot data.
+- <a href="https://seaborn.pydata.org/">Seaborn</a> : Library berbasis Matplotlib untuk visualisasi data yang lebih menarik.
+- <a href="https://www.dask.org/">Dask</a> : Library untuk pemrosesan data besar yang dapat berjalan secara paralel.</p>
+<p>*Note: Kalau Anda ingin mencoba-coba ada software yang sudah include untuk penerapan ML yaitu <a href="https://ml.cms.waikato.ac.nz/weka/index.html">WEKA</a></p>
+<h2 id="4-tugas-mahasiswa">4. Tugas Mahasiswa</h2>
+<ol>
+<li>Silahkan cari studi kasus pada bidang Anda yang dapat diselesaikan dengan ML. Beri 2 contoh tiap teknik(<strong><em>supervised learning</em></strong> dan <strong><em>unspervised learning</em></strong>) satu masalah!</li>
+<li>Cari dataset terkait studi kasus tersebut kemudian jelaskan proses penyelesaian dengan algoritma apa!</li>
+</ol>
+<p><strong>Note:</strong>
+Rekomendasi tempat untuk mencari dataset: <a href="https://www.kaggle.com/datasets">kaggle</a>, <a href="https://archive.ics.uci.edu/">uci</a>, <a href="https://datasetsearch.research.google.com/">google dataset</a></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href=".." class="btn btn-neutral float-left" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Materi2/" class="btn btn-neutral float-right" title="Pertemuan 3: Pengumpulan, Pemrosesan dan Visualisasi pada Dataset">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/gramandha/TKE1686-Machine-Learning" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../Materi2/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

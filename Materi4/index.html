@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Pertemuan 6: Klasifikasi - Machine Learning</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Pertemuan 6: Klasifikasi";
+        var mkdocs_page_input_path = "Materi4.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Machine Learning
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Materi</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../Materi1/">Pertemuan 2: Pengantar Machine Learning pada bidang Teknik Elektro</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Materi2/">Pertemuan 3: Pengumpulan, Pemrosesan dan Visualisasi pada Dataset</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Materi3/">Pertemuan 4-5: Klaster (K-Means, Hirarki Klaster, DBSCAN)</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Pertemuan 6: Klasifikasi</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#k-nearest-neighbor-k-nn">K-Nearest Neighbor (K-NN)</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#video-knn-penejelasan-k-nn">Video KNN Penejelasan K-NN</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#contoh-studi-kasus">Contoh Studi kasus</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#contoh-program">Contoh Program</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#decision-tree">Decision Tree</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#contoh-studi-kasus_1">Contoh studi kasus</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#contoh-program_1">Contoh Program</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#lkm-4">LKM 4</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#1-soal-klasterisasi-dengan-k-means-dan-hierarchical-clustering">1. Soal Klasterisasi dengan k-means dan Hierarchical Clustering</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#deskripsi-soal">Deskripsi Soal</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#data-pelanggan">Data Pelanggan</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#tugas">Tugas</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2-soal-klasifikasi-dengan-k-nn-dan-decision-tree">2. Soal Klasifikasi dengan k-NN dan Decision Tree</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#deskripsi-soal_1">Deskripsi Soal</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#data-nasabah">Data Nasabah</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#tugas_1">Tugas</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#a-k-nn-classification">a. K-NN Classification</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#b-decision-tree-classification">b. Decision Tree Classification</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Tugas</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../LKM1/">LKM 1</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../LKM2/">LKM 2</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../LKM3/">LKM 3</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../LKM4/">LKM 4</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Machine Learning</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Materi</li>
+      <li class="breadcrumb-item active">Pertemuan 6: Klasifikasi</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/gramandha/TKE1686-Machine-Learning/edit/master/docs/Materi4.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="pertemuan-6-klasifikasi">Pertemuan 6: Klasifikasi</h1>
+<p>[TKE1686] MK Machine Learning (3-SKS)</p>
+<p>oleh: Gramandha Wega Intyanto, S.ST., M.T.</p>
+<p><strong>Algoritma Klasifikasi yang akan di pelajari</strong>
+  - <em>k-Nearest Neighbor</em> (K-NN)
+  - <em>Decision Tree</em></p>
+<h2 id="k-nearest-neighbor-k-nn"><em>K-Nearest Neighbor</em> (K-NN)</h2>
+<p>Metode k-Nearest Neighbor Classifier menentukan kelas/label dari suatu data uji
+berdasarkan label dari data – data latih sekitarnya. Ilustrasi ditunjukkan pada Gambar berikut</p>
+<p><img alt="gambar knn" src="../assets/knn.png" /></p>
+<p>Algoritma untuk k-nearest neighbor sebagai beirkut :</p>
+<ol>
+<li>Menentukan nilai k</li>
+<li>Menghitung jarak antara data baru terhadap semua training data</li>
+<li>Mengidentifikasi k nearest neighbor</li>
+<li>Menentukan label/kelas data baru berdasarkan kelas k-nearest neighbor (dapat menggunakan voting)</li>
+</ol>
+<p>Karakter dari algoritma k-nearest neighbor dapat dituliskan sebagai beirkut :</p>
+<ol>
+<li>Cocok untuk data numerik</li>
+<li>Mudah dipahami dan diimplementasikan</li>
+<li>k-NN merupakan lazy learner (tidak membangun model secara eksplisit)</li>
+<li>Penentuan label/kelas data baru membutuhkan computational cost yang cukup tinggi</li>
+<li>
+<p>Perlu menentukan nilai k yang sesuai:</p>
+<p>a. Jika k terlalu kecil, sensitif terhadap noise
+b. Jika k terlalu besar, nearest neigbor mungkin mencakup data dari
+kelas lain</p>
+</li>
+</ol>
+<h3 id="video-knn-penejelasan-k-nn">Video KNN Penejelasan K-NN</h3>
+<p><a href="https://www.youtube.com/watch?v=0p0o5cmgLdE"><img alt="Video YouTube" src="https://img.youtube.com/vi/0p0o5cmgLdE/0.jpg" /></a>         </p>
+<h3 id="contoh-studi-kasus">Contoh Studi kasus</h3>
+<p>Studi kasus di bawah ini menggunakan penetuan nilai k=4 untuk mencari x1 = 3 dan x2 = 7 termasuk dalam kelas mana (<em>GOOD</em> atau <em>BAD</em>)</p>
+<p><img alt="gambar knn1" src="../assets/tryKNN1.png" /></p>
+<p><img alt="gambar knn2" src="../assets/tryKNN2.png" /></p>
+<h3 id="contoh-program">Contoh Program</h3>
+<p><img alt="gambar p1" src="../assets/pknn1.png" /></p>
+<p><img alt="gambar p2" src="../assets/pknn2.png" /></p>
+<p><img alt="gambar p3" src="../assets/pknn3.png" /></p>
+<h2 id="decision-tree"><em>Decision Tree</em></h2>
+<p>Decision Tree (Pohon Keputusan) merupakan salah satu algoritma pembelajaran
+mesin yang mengklasifikasi dengan mengambil suatu keputusan antara benar atau
+tidaknya suatu aturan. Kelebihan dari algoritma Decision Tree adalah input yang
+digunakan boleh berupa tipe data apapun (String, Integer, Float, Boolean, dll),</p>
+<p>Video <em>Decision Tree</em>
+<a href="https://www.youtube.com/watch?v=JcI5E2Ng6r4"><img alt="Video YouTube" src="https://img.youtube.com/vi/JcI5E2Ng6r4/0.jpg" /></a></p>
+<h3 id="contoh-studi-kasus_1">Contoh studi kasus</h3>
+<p>Bagian paling puncak dari pohon keputusan (Hari Libur?) disebut dengan root node. Bagian
+selanjutnya dari pohon keputusan adalah branch, pada gambar di atas digambarkan oleh
+node (Jam &gt; 17.00?). Terakhir leaves merupakan node yang berisi kelas dari permasalahan
+yang ingin diklasifikasikan.
+<img alt="gambar DT1" src="../assets/DT_sederhana.png" /></p>
+<p>Salah satu cara membangun Decision Tree adalah dengan menggunakan perhitungan Gini Impurity. Gini Impurity untuk leaf dari Decision Tree dapat dihitung menggunakan persamaan berikut:
+$
+𝐺𝑖𝑛𝑖 𝐼𝑚𝑝𝑢𝑟𝑖𝑡𝑦 = 1 − (𝑃𝑟𝑜𝑏𝑎𝑏𝑖𝑙𝑖𝑡𝑎𝑠(𝑌𝑎))^2 − (𝑃𝑟𝑜𝑏𝑎𝑏𝑖𝑙𝑖𝑡𝑎𝑠(𝑇𝑖𝑑𝑎𝑘))^2 
+$</p>
+<p>Untuk menentukan root, perlu dicari Gini Impurity terkecil dari “Kebutuhan Primer”, “Sudah Gajian”, dan “Harga Barang” terhadap “Beli”. Gini Impurity “Kebutuhan Primer” terhadap “Beli” dapat diilustrasikan pada Gambar berikut</p>
+<p><img alt="gambar DT1" src="../assets/data_DT.png" /></p>
+<p>Total Gini Impurity dapat dihitung dengan weighted average dari Gini Impurity kedua
+leaves. Jumlah kemunculan “Ya” untuk kebutuhan primer sebanyak 4 dan jumlah
+kemunculan “Tidak” untuk kebutuhan primer sebanyak 3, maka weighted average Gini
+Impurity dapat dihitung dengan (terdapat di gambar): 
+$ Gini Impurity leaf kiri * 4 / (4+3) + Gini Impurity leaf kanan * 3 / (4+3)$ </p>
+<p>Dengan cara yang sama, Gini Impurity “Sudah Gajian” terhadap “Beli” dihitung dan diilustrasikan pada Gambar berikut:</p>
+<p><img alt="gambar DT1" src="../assets/DT_langkah1.png" /></p>
+<p>Karena “Harga Barang” memiliki variabel kontinu, Gini Impurity “Harga Barang” terhadap
+“Beli” dihitung dengan cara yang sedikit berbeda. Pertama, data harus diurutkan
+berdasarkan “Harga Barang” terkecil ke “Harga Barang” terbesar. Kemudian untuk setiap
+data yang berdekatan, hitung Gini Impurity untuk rata-rata “Harga Barang” kedua data yang
+berdekatan. Pada Gambar 20, dihitung Gini Impurity untuk “Harga Barang” &gt; 9500.</p>
+<p><img alt="gambar DT1" src="../assets/DT_langkah2.png" /></p>
+<p>Dengan cara yang sama, hitung Gini Impurity untuk 15000, 26500, 36500, 44000, dan 66500. Setelah itu ambil Gini Impurity terkecil sebagai kandidat root. Jika ada lebih dari 1 yang sama, maka bebas menentukan yang mana yang ingin digunakan sebagai root.</p>
+<p><img alt="gambar DT1" src="../assets/DT_langkah3.png" /></p>
+<p>Setelah proses diatas, didapatkan Gini Impurity dari “Kebutuhan Primer”, “Sudah Gajian”, dan “Harga Barang” terhadap “Beli” secara berurutan 0.4, 0.22, dan 0.34. Karena Gini Impurity “Sudah Gajian” terhadap ”Beli” merupakan yang terkecil (0.22), maka “Sudah Gajian” dijadikan root dari Decision Tree. Maka Decision Tree sementara menjadi seperti
+pada Gambar berikut</p>
+<p><img alt="gambar DT1" src="../assets/DT_langkah4.png" /></p>
+<p>Karena Gini Impurity leaf kanan adalah 0, maka tidak perlu di-split lagi. Oleh karena itu
+hanya leaf kiri yang perlu di-split. Leaf kiri dapat di-split dengan mencari Gini Impurity
+terkecil dari “Kebutuhan Primer” atau “Harga Barang”. Cara yang dilakukan sama, namun
+data yang digunakan lebih sedikit karena telah tersaring oleh Decision root. Contoh untuk
+“Kebutuhan Primer” dan “Harga Barang” tersaji pada Gambar berikut ini
+<img alt="gambar DT1" src="../assets/DT_sementara.png" />
+<img alt="gambar DT1" src="../assets/DT_langkah5.png" />
+<img alt="gambar DT1" src="../assets/DT_langkah6.png" /></p>
+<p>untuk data kontinu, perlu dihitung Gini Impurity dari data berdekatan. Karena Gini Impurity dari “Harga Barang &gt; 15000” lebih kecil dibandingkan dengan Gini Impurity “Kebutuhan Primer”, maka “Harga Barang &gt; 15000” dipilih sebagai branch. Tidak diperlukan proses split lagi karena Gini Impurity dari seluruh leaves sudah mencapai 0. Sehingga Decision Tree yang dihasilkan adalah seperti pada Gambar</p>
+<p><img alt="gambar DT1" src="../assets/DT_hasilakhir.png" /></p>
+<h3 id="contoh-program_1">Contoh Program</h3>
+<p>Pada bahasa pemrograman Python, Decision Tree dapat dilakukan dengan menggunakan
+pustaka Scikit-Learn dengan menjalankan potongan kode</p>
+<p><img alt="gambar DT1" src="../assets/prog_DT1.png" /></p>
+<p>Beberapa parameter dapat diubah nilainya, antara lain adalah parameter max_depth dan
+min_samples_split, dengan penjelasan pada tabel dan gambar berikut</p>
+<p><img alt="gambar DT1" src="../assets/prog_DT2.png" /></p>
+<h2 id="lkm-4">LKM 4</h2>
+<h3 id="1-soal-klasterisasi-dengan-k-means-dan-hierarchical-clustering"><strong>1. Soal Klasterisasi dengan k-means dan Hierarchical Clustering</strong></h3>
+<h4 id="deskripsi-soal"><strong>Deskripsi Soal</strong></h4>
+<p>Sebuah perusahaan ingin mengelompokkan pelanggan berdasarkan pola pembelian mereka.<br />
+Data yang tersedia mencakup informasi <strong>penghasilan bulanan (dalam juta rupiah)</strong> dan <strong>jumlah transaksi dalam sebulan</strong>.<br />
+Gunakan <strong>k-means</strong> dan <strong>Hierarchical Clustering</strong> untuk mengelompokkan pelanggan dan tentukan pola yang terbentuk.  </p>
+<h4 id="data-pelanggan"><strong>Data Pelanggan</strong></h4>
+<table>
+<thead>
+<tr>
+<th>ID Pelanggan</th>
+<th>Penghasilan (Juta Rupiah)</th>
+<th>Jumlah Transaksi per Bulan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P1</td>
+<td>3.5</td>
+<td>5</td>
+</tr>
+<tr>
+<td>P2</td>
+<td>7.0</td>
+<td>20</td>
+</tr>
+<tr>
+<td>P3</td>
+<td>2.0</td>
+<td>3</td>
+</tr>
+<tr>
+<td>P4</td>
+<td>5.5</td>
+<td>10</td>
+</tr>
+<tr>
+<td>P5</td>
+<td>8.0</td>
+<td>25</td>
+</tr>
+<tr>
+<td>P6</td>
+<td>1.5</td>
+<td>2</td>
+</tr>
+<tr>
+<td>P7</td>
+<td>6.0</td>
+<td>12</td>
+</tr>
+<tr>
+<td>P8</td>
+<td>9.5</td>
+<td>30</td>
+</tr>
+<tr>
+<td>P9</td>
+<td>4.0</td>
+<td>7</td>
+</tr>
+<tr>
+<td>P10</td>
+<td>3.0</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="tugas"><strong>Tugas</strong></h4>
+<h5 id="a-k-means-clustering"><strong>a. K-means Clustering</strong></h5>
+<ul>
+<li>Jika kita sudah memiliki klaster awal dengan pusat klaster sebagai berikut:</li>
+<li><strong>Klaster 1</strong>: (2.5, 4)</li>
+<li><strong>Klaster 2</strong>: (7.5, 22)</li>
+<li>Gunakan metode <strong>k-means</strong> untuk mengelompokkan pelanggan ke dalam salah satu dari klaster tersebut berdasarkan jarak Euclidean.</li>
+<li>Tentukan klaster akhir setelah semua pelanggan dikategorikan.</li>
+</ul>
+<h5 id="b-hierarchical-clustering"><strong>b. Hierarchical Clustering</strong></h5>
+<ul>
+<li>Gunakan metode <strong>Agglomerative Hierarchical Clustering</strong> dengan pendekatan <strong>Single Linkage</strong> atau <strong>Complete Linkage</strong>.</li>
+<li>Buat <strong>dendrogram</strong> untuk menunjukkan proses penggabungan klaster hingga terbentuk satu klaster besar.</li>
+<li>Tentukan <strong>jumlah klaster optimal</strong> berdasarkan dendrogram.</li>
+</ul>
+<h3 id="2-soal-klasifikasi-dengan-k-nn-dan-decision-tree"><strong>2. Soal Klasifikasi dengan k-NN dan Decision Tree</strong></h3>
+<h3 id="deskripsi-soal_1"><strong>Deskripsi Soal</strong></h3>
+<p>Sebuah bank ingin mengklasifikasikan calon nasabah ke dalam kategori <strong>"Layak Kredit"</strong> atau <strong>"Tidak Layak Kredit"</strong> berdasarkan beberapa parameter.<br />
+Data yang tersedia mencakup <strong>penghasilan bulanan</strong>, <strong>jumlah pinjaman yang sedang berjalan</strong>, dan <strong>status pekerjaan</strong>.<br />
+Gunakan <strong>k-NN</strong> dan <strong>Decision Tree</strong> untuk melakukan klasifikasi dan tentukan pola yang terbentuk.</p>
+<hr />
+<h3 id="data-nasabah"><strong>Data Nasabah</strong></h3>
+<table>
+<thead>
+<tr>
+<th>ID Nasabah</th>
+<th>Penghasilan (Juta Rupiah)</th>
+<th>Pinjaman Aktif (Juta)</th>
+<th>Status Pekerjaan</th>
+<th>Status Kredit (Label)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>N1</td>
+<td>5.0</td>
+<td>10</td>
+<td>Tetap</td>
+<td>Layak Kredit</td>
+</tr>
+<tr>
+<td>N2</td>
+<td>2.5</td>
+<td>5</td>
+<td>Kontrak</td>
+<td>Tidak Layak Kredit</td>
+</tr>
+<tr>
+<td>N3</td>
+<td>7.0</td>
+<td>20</td>
+<td>Tetap</td>
+<td>Layak Kredit</td>
+</tr>
+<tr>
+<td>N4</td>
+<td>3.0</td>
+<td>8</td>
+<td>Kontrak</td>
+<td>Tidak Layak Kredit</td>
+</tr>
+<tr>
+<td>N5</td>
+<td>6.0</td>
+<td>15</td>
+<td>Tetap</td>
+<td>Layak Kredit</td>
+</tr>
+<tr>
+<td>N6</td>
+<td>4.0</td>
+<td>12</td>
+<td>Kontrak</td>
+<td>Tidak Layak Kredit</td>
+</tr>
+<tr>
+<td>N7</td>
+<td>8.5</td>
+<td>25</td>
+<td>Tetap</td>
+<td>Layak Kredit</td>
+</tr>
+<tr>
+<td>N8</td>
+<td>3.5</td>
+<td>6</td>
+<td>Kontrak</td>
+<td>Tidak Layak Kredit</td>
+</tr>
+<tr>
+<td>N9</td>
+<td>6.5</td>
+<td>18</td>
+<td>Tetap</td>
+<td>Layak Kredit</td>
+</tr>
+<tr>
+<td>N10</td>
+<td>2.0</td>
+<td>4</td>
+<td>Kontrak</td>
+<td>Tidak Layak Kredit</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="tugas_1"><strong>Tugas</strong></h3>
+<h4 id="a-k-nn-classification"><strong>a. K-NN Classification</strong></h4>
+<ul>
+<li>Gunakan metode <strong>k-Nearest Neighbors (k-NN)</strong> untuk mengklasifikasikan nasabah baru dengan fitur berikut:</li>
+<li><strong>Penghasilan</strong> = 4.5 juta rupiah  </li>
+<li><strong>Pinjaman Aktif</strong> = 9 juta rupiah  </li>
+<li><strong>Status Pekerjaan</strong> = Kontrak  </li>
+<li>Gunakan <strong>k = 3</strong> dan hitung <strong>jarak Euclidean</strong> untuk menentukan kelas nasabah tersebut.</li>
+</ul>
+<h4 id="b-decision-tree-classification"><strong>b. Decision Tree Classification</strong></h4>
+<ul>
+<li>Gunakan metode <strong>Decision Tree</strong> untuk membangun model klasifikasi berdasarkan fitur yang tersedia.</li>
+<li>Gambarkan struktur <strong>decision tree</strong> yang terbentuk.</li>
+<li>Gunakan model untuk memprediksi status kredit nasabah dengan parameter berikut:</li>
+<li><strong>Penghasilan</strong> = 6.0 juta rupiah  </li>
+<li><strong>Pinjaman Aktif</strong> = 14 juta rupiah  </li>
+<li><strong>Status Pekerjaan</strong> = Tetap  </li>
+</ul>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../Materi3/" class="btn btn-neutral float-left" title="Pertemuan 4-5: Klaster (K-Means, Hirarki Klaster, DBSCAN)"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../LKM1/" class="btn btn-neutral float-right" title="LKM 1">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/gramandha/TKE1686-Machine-Learning" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../Materi3/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../LKM1/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

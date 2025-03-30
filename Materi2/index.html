@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Pertemuan 3: Pengumpulan, Pemrosesan dan Visualisasi pada Dataset - Machine Learning</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Pertemuan 3: Pengumpulan, Pemrosesan dan Visualisasi pada Dataset";
+        var mkdocs_page_input_path = "Materi2.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Machine Learning
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Materi</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../Materi1/">Pertemuan 2: Pengantar Machine Learning pada bidang Teknik Elektro</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Pertemuan 3: Pengumpulan, Pemrosesan dan Visualisasi pada Dataset</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#1-alur-kerja-pada-machine-learning">1. Alur Kerja pada Machine Learning</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2-dataset">2. Dataset</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#21-pengumpulan-data">2.1. Pengumpulan Data</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#22a-pra-pemrosesan-data">2.2.a Pra-Pemrosesan Data</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#22b-pra-pemrosesan-data">2.2.b Pra-Pemrosesan data</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#a-data-wrangling">a. Data Wrangling</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#a1-explorasi-data">a.1. Explorasi Data</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#a2-membersihkan-data">a.2. Membersihkan data</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#a3-menggabungkan-data">a.3. Menggabungkan Data</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#b-feature-scaling">b. Feature Scaling</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#b1-standardisasi">b.1. Standardisasi</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#b2-normalisasi">b.2. Normalisasi</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#c-data-type">c. Data Type</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#c1-berurutan-dan-tidak-berurutan">c.1. Berurutan dan tidak berurutan</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#c2-stasioner-dan-non-stasioner">c.2. Stasioner dan non-stasioner</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#d-data-spliting">d. Data Spliting</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#3-tugas-mahasiswa">3. Tugas Mahasiswa</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Materi3/">Pertemuan 4-5: Klaster (K-Means, Hirarki Klaster, DBSCAN)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Materi4/">Pertemuan 6: Klasifikasi</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Tugas</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../LKM1/">LKM 1</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../LKM2/">LKM 2</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../LKM3/">LKM 3</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../LKM4/">LKM 4</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Machine Learning</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Materi</li>
+      <li class="breadcrumb-item active">Pertemuan 3: Pengumpulan, Pemrosesan dan Visualisasi pada Dataset</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/gramandha/TKE1686-Machine-Learning/edit/master/docs/Materi2.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="pertemuan-3-pengumpulan-pemrosesan-dan-visualisasi-pada-dataset">Pertemuan 3: Pengumpulan, Pemrosesan dan Visualisasi pada Dataset</h1>
+<p><strong>[TKE1686] MK Machine Learning (3-SKS)</strong></p>
+<p>oleh Gramandha Wega Intyanto</p>
+<h2 id="1-alur-kerja-pada-machine-learning">1. Alur Kerja pada Machine Learning</h2>
+<pre class="mermaid"><code>graph LR;
+    A["Tahap 1\nPengumpulan Dataset"] --&gt; B["Tahap 2\nPemrosesan Dataset"];
+    B --&gt; C["Tahap 3\nPembelajaran Model"];
+    C --&gt; D["Tahap 4\nEvaluasi Model"];
+
+    D -.-&gt;|Perbaikan pemrosesan Dataset| B;
+    D -.-&gt;|Revisi Model| C;
+    D -.-&gt;|Perbaikan Dataset| A;</code></pre>
+<ol>
+<li>
+<p>Pengumpulan Dataset: Langkah awal ML adalah mengumpulkan kumpulan data. Hal-hal yang harus dipertimbangakan dalam pengumpulan data yaitu metode pengambilan data, data akan digunakan untuk apa?</p>
+</li>
+<li>
+<p>Preproses Data: Data yang kami kumpulkan sering kali tidak terorganisir dan tidak dapat langsung digunakan untuk melatih model. Sebelum melanjutkan ke langkah berikutnya, data perlu diproses terlebih dahulu.</p>
+<ul>
+<li>Kumpulan data mungkin berisi data yang hilang atau berisik, perlu di <strong>perbaiki atau di filter</strong>;</li>
+<li>Data yang berbeda dapat berada dalam rentang yang berbeda, perlu dilakukan <strong>standarisasi atau normalisasi</strong> karena bisa jadi menjadi masalah bagi model;</li>
+<li>Perlu <strong>menemukan dan memilih data yang lebih berkontribusi</strong> untuk menemukan variabel target;</li>
+<li>Terakhir, kumpulan data harus dibagi menjadi dua set yaitu <strong>pelatihan</strong> dan <strong>pengujian</strong> (bisa juga dilakukan pembagian menjadi 3 yaitu <strong>pelatihan, validasi, pengujian</strong>) | yang sering digunakan 80% set pelatihan, 20% set pengujian / 70% set pelatihan 20% set validasi 10% set pengujian.</li>
+</ul>
+</li>
+<li>Melatih Model: Berdasarkan permasalahan, jenis model yang dibutuhkan harus dipilih terlebih dahulu. Saat memilih model, informasi yang tersedia pada kumpulan data harus dipertimbangkan.</li>
+<li>Evaluasi Model: Setelah model dibangun dan dilatih, penting untuk memahami seberapa baik model telah dilatih, seberapa baik kinerjanya, dan apakah model akan berguna untuk eksperimen. Kumpulan <strong>data set pengujiandigunakan untuk menguji model</strong> , dan berbagai <strong>metrik evaluasi</strong> digunakan untuk mengevaluasi dan memahami model.</li>
+</ol>
+<h2 id="2-dataset">2. Dataset</h2>
+<ul>
+<li>Performa model sangat bergantung pada persiapan kumpulan data (dataset).</li>
+<li>Biasanya Kumpulan data paling baik disusun dalam bentuk tabel, di mana setiap baris sesuai dengan satu entri data dan setiap kolom mewakili variabel tertentu yang terkait dengan semua data yang tersedia dalam kumpulan data tersebut.</li>
+<li>Ukuran kumpulan data yang berkisar dari terabyte hingga megabyte dapat disebut sebagai kumpulan data besar, sedangkan kumpulan data dalam kisaran kilobyte adalah kumpulan data kecil.</li>
+</ul>
+<h2 id="21-pengumpulan-data">2.1. Pengumpulan Data</h2>
+<p>a. Data yang diambil langsung dari secara langsung dengan beberapa komponen sensor-sensor. </p>
+<div class="highlight"><pre><span></span><code>- Kamera dan sensor optik untuk pengambilan data citra.
+- Senosr IMU untuk pengambilan data percepatan, rotasi dan orientasi.
+- Bisa juga dataset kumpulan beberapa sensor seperti data loging
+- dsb.
+</code></pre></div>
+<p>b. Data yang diambil langsung dari beberapa platform data public</p>
+<div class="highlight"><pre><span></span><code>- (roboflow, keaggle, coco, pascal voc, dsb)
+</code></pre></div>
+<p>Beberapa Rekomendasi Dataset untuk Machine Learning dalam Teknik Elektro</p>
+<p><em>1. Dataset untuk Pengolahan Citra (Computer Vision)</em>
+- <strong><a href="http://yann.lecun.com/exdb/mnist/">MNIST</a></strong> Dataset angka tulisan tangan (0-9) untuk klasifikasi.<br />
+- <strong><a href="https://www.cs.toronto.edu/~kriz/cifar.html">CIFAR-10 &amp; CIFAR-100</a></strong>  Dataset gambar untuk klasifikasi objek.<br />
+- <strong><a href="https://cocodataset.org/">COCO (Common Objects in Context)</a></strong>  Dataset objek dunia nyata untuk deteksi dan segmentasi.<br />
+- <strong><a href="https://www.kaggle.com/datasets/googleai/electrical-substation-images">Open Electrical Substation Images</a></strong>  Dataset gambar infrastruktur listrik.  </p>
+<p><em>2. Dataset untuk Pemrosesan Sinyal dan Sistem Tenaga</em>
+- <strong><a href="https://www.kaggle.com/datasets/mihailbonchis/eeg-brainwave-dataset-feeling-emotions">EEG Brainwave Dataset</a></strong>  Data sinyal EEG untuk analisis otak.<br />
+- <strong><a href="https://www.kaggle.com/datasets/shayanfazeli/heartbeat">ECG Heartbeat Categorization Dataset</a></strong>  Sinyal jantung ECG untuk klasifikasi kondisi kesehatan.<br />
+- <strong><a href="https://www.kaggle.com/datasets/robikscube/hourly-energy-consumption">Electricity Load Forecasting</a></strong>  Dataset konsumsi energi listrik untuk prediksi.<br />
+- <strong><a href="https://www.kaggle.com/datasets/ahmedmohameddahab/power-system-fault-detection">Fault Detection in Power Systems</a></strong>   Dataset deteksi gangguan pada jaringan listrik.  </p>
+<p><em>3. Dataset untuk Kendali dan Robotika</em>
+- <strong><a href="https://www.kaggle.com/datasets/andrewmvd/self-driving-car-dataset">Self-Driving Car Dataset (Udacity)</a></strong>  Dataset untuk pengendalian kendaraan otonom.<br />
+- <strong><a href="https://www.mit.edu/~phillipi/push/">MIT Push Dataset</a></strong>  Dataset untuk robotik dan manipulasi objek.<br />
+- <strong><a href="http://mocap.cs.cmu.edu/">CMU Motion Capture Dataset</a></strong>  Data pergerakan tubuh manusia untuk kontrol robot.  </p>
+<p><em>4. Dataset untuk Prediksi dan Analisis Data</em>
+- <strong><a href="https://www.kaggle.com/datasets/selfishgene/historical-hourly-weather-data">Weather Dataset</a></strong>  Dataset cuaca untuk prediksi suhu dan kondisi lingkungan.<br />
+- <strong><a href="https://archive.ics.uci.edu/ml/datasets/Energy+efficiency">Energy Efficiency Dataset</a></strong>  Dataset untuk prediksi konsumsi energi pada bangunan.<br />
+- <strong><a href="https://www.kaggle.com/datasets/arpitbhayani/tesla-battery-data">Battery Dataset</a></strong>  Data performa baterai untuk analisis degradasi.  </p>
+<p><em>5. Dataset untuk Keamanan dan Deteksi Anomali</em>
+- <strong><a href="https://www.unb.ca/cic/datasets/nsl.html">NSL-KDD</a></strong>  Dataset deteksi serangan siber dalam jaringan komputer.<br />
+- <strong><a href="https://www.kaggle.com/datasets/berkerisen/power-grid-stability">Power Grid Stability Dataset</a></strong>  Data stabilitas jaringan listrik.<br />
+- <strong><a href="https://archive.ics.uci.edu/ml/datasets/Water+Treatment+Plant">Water Treatment Plant Dataset</a></strong>  Dataset pemantauan kualitas air untuk deteksi anomali.</p>
+<h2 id="22a-pra-pemrosesan-data">2.2.a Pra-Pemrosesan Data</h2>
+<p>Ini adalah tahap awal yang bertujuan untuk membersihkan dan menyusun data agar lebih siap digunakan dalam analisis atau pembelajaran mesin. Proses ini mencakup beberapa langkah utama, yaitu:
+1. Data Integration (Integrasi Data) : Menggabungkan data dari berbagai sumber agar menjadi satu kesatuan yang dapat dianalisis.
+2. Schema Integration: Menyamakan struktur data dari berbagai sumber.
+3. Entity Identification Problem: Menyamakan identitas entitas yang sama tetapi memiliki format berbeda di beberapa sumber data.
+4. Detecting and Resolving Data Values Concepts: Mengidentifikasi dan menyelesaikan perbedaan nilai data yang memiliki makna serupa.</p>
+<pre class="mermaid"><code>graph TD;
+    A[Data Preprocessing] --&gt; B[Data Integration]
+    B --&gt; C[Schema integration]
+    B --&gt; D[Entity identification problem]
+    B --&gt; E[Detecting and resolving data values concepts]
+
+    A --&gt; F[Data Reduction or Dimension Reduction]
+    F --&gt; G[Data cube aggregation]
+    F --&gt; H[Attribute subset selection]
+    F --&gt; I[Numerosity reduction]
+    F --&gt; J[Dimensionality reduction]
+
+    A --&gt; K[Data Transformation]
+    K --&gt; L[Normalization]
+    K --&gt; M[Attribute selection]
+    K --&gt; N[Discretization]
+    K --&gt; O[Concept hierarchy generation]
+
+    A --&gt; P[Data Cleaning]
+    P --&gt; Q[Missing data]
+    P --&gt; R[Noisy data]</code></pre>
+<h2 id="22b-pra-pemrosesan-data"><strong>2.2.b Pra-Pemrosesan data</strong></h2>
+<p>Pra-Pemrosesan data (refrensi dari buku <em>machine learning crash course for engineers</em>) juga bisa di lakukan dengan cara sederhana sebagai berikut yang akan di bahas lebih detail pada materi ini :
+1. <em>Data Wrangling</em>
+2. <em>Feature Scaling</em>
+3. <em>Data Types</em>
+4. <em>Data Splitting</em></p>
+<h2 id="a-data-wrangling">a. Data Wrangling</h2>
+<p>Data wrangling, juga dikenal sebagai data munging, adalah proses pra-pemrosesan data yang mencakup pengumpulan, pembersihan, transformasi, dan penggabungan data dari berbagai sumber menjadi bentuk yang dapat diolah.</p>
+<h4 id="a1-explorasi-data">a.1. Explorasi Data</h4>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data.csv&quot;</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">())</span>  <span class="c1"># Menampilkan tipe data dan nilai yang hilang</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>  <span class="c1"># Statistik ringkasan data numerik</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>  <span class="c1"># Melihat 5 baris pertama</span>
+</code></pre></div>
+<h4 id="a2-membersihkan-data">a.2. Membersihkan data</h4>
+<p>a.2.1. missing dengan imputasi</p>
+<div class="highlight"><pre><span></span><code><span class="n">X</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">2</span><span class="p">],[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">35</span><span class="p">],[</span><span class="mi">6</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">],[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">75</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>[[1, 5], [2, 10], [nan, 2], [7, 35], [6, nan], [15, 75], [0, 0]]
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.impute</span><span class="w"> </span><span class="kn">import</span> <span class="n">SimpleImputer</span>
+
+<span class="c1"># Menggunakan imputasi mean untuk mengganti nilai NaN</span>
+<span class="n">imputer</span> <span class="o">=</span> <span class="n">SimpleImputer</span><span class="p">(</span><span class="n">strategy</span><span class="o">=</span><span class="s2">&quot;mean&quot;</span><span class="p">)</span>  <span class="c1"># Bisa diganti dengan &quot;median&quot; atau &quot;most_frequent&quot;</span>
+<span class="n">X_imputed</span> <span class="o">=</span> <span class="n">imputer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">X_imputed</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>[[ 1.          5.        ]
+ [ 2.         10.        ]
+ [ 5.16666667  2.        ]
+ [ 7.         35.        ]
+ [ 6.         21.16666667]
+ [15.         75.        ]
+ [ 0.          0.        ]]
+</code></pre></div>
+<p>a.2.2.Menghapus duplikasi data</p>
+<div class="highlight"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</code></pre></div>
+<p>a.2.3.Mengoreksi format data</p>
+<div class="highlight"><pre><span></span><code><span class="n">df</span><span class="p">[</span><span class="s2">&quot;tanggal&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;tanggal&quot;</span><span class="p">])</span>  <span class="c1"># Mengubah ke format datetime</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;harga&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;harga&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>  <span class="c1"># Mengubah tipe data</span>
+</code></pre></div>
+<h4 id="a3-menggabungkan-data">a.3. Menggabungkan Data</h4>
+<div class="highlight"><pre><span></span><code><span class="n">df_merged</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df1</span><span class="p">,</span> <span class="n">df2</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;ID&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="b-feature-scaling">b. Feature Scaling</h3>
+<p>Saat bekerja dengan berbagai fitur atau variabel, hampir dapat dipastikan bahwa kita memiliki data pada berbagai fitur dalam rentang yang berbeda. </p>
+<blockquote>
+<p><strong>Kasus</strong>, satu set data memiliki dua fitur: suhu dan kelembapan. Nilai untuk suhu berkisar antara 25 hingga 0,35 ◦ C, dan nilai untuk kelembapan berkisar antara 70 hingga 90%. Rentangnya berbeda untuk kedua fitur tersebut, sehingga keduanya tidak dapat dibandingkan. Perbedaan rentang ini juga tidak sesuai untuk digunakan oleh algoritme ML.</p>
+</blockquote>
+<p>Oleh karena itu, semacam <strong>transformasi dilakukan pada nilai atribut sehingga semua fitur berada dalam rentang yang sebanding dan dapat digunakan</strong>. Transformasi yang dilakukan pada data untuk tujuan ini adalah <strong>penskalaan fitur</strong>. Ada berbagai metode untuk penskalaan fitur, tiga di antaranya adalah <strong>standarisasi, normalisasi, dan penambahan data <em>(data agumentation)</em></strong>. Metode-metode ini dijelaskan dalam bagian berikut.</p>
+<h4 id="b1-standardisasi">b.1. Standardisasi</h4>
+<p>Standardisasi merupakan metode yang sangat populer untuk penskalaan fitur. Setelah menstandardisasi
+himpunan data, kita memperoleh nilai rata-rata nol dan simpangan baku satuan. Metode ini
+digunakan terutama dalam kasus-kasus di mana distribusi data mengikuti distribusi normal.
+Menstandardisasi data tidak membawa data ke rentang tertentu yang telah ditetapkan sebelumnya.
+Oleh karena itu, metode penskalaan fitur ini <strong>tidak terpengaruh oleh outlier</strong>. Setiap kali suatu fitur distandarisasi, setiap data terlebih dahulu dikurangi dari nilai rata-rata dan kemudian dibagi dengan simpangan baku.</p>
+<p><span class="arithmatex">\(X_{std} = \frac{X - \mu}{\sigma}\)</span></p>
+<p><img alt="gambar_s" src="../assets/std.png" /></p>
+<h4 id="b2-normalisasi">b.2. Normalisasi</h4>
+<p>Normalisasi adalah metode lain yang populer digunakan untuk penskalaan fitur. Normalisasi
+adalah teknik untuk mengubah nilai numerik yang berbeda menjadi rentang umum tanpa
+mendistorsi perbedaan antara nilai-nilai tersebut. Ini menskalakan semua nilai fitur
+dalam rentang [0,1] atau [.−1,1]. Karena ada nilai rentang tertentu yang menormalkan
+data, <strong>outlier yang ada dalam kumpulan data memengaruhi metode ini</strong>. Normalisasi bermanfaat ketika distribusi data kumpulan data tidak diketahui.</p>
+<p><span class="arithmatex">\(X_{norm} = \frac{X - X_{min}}{X_{max} - X_{min}}\)</span></p>
+<p><img alt="gambar_s" src="../assets/norm.png" /></p>
+<table>
+<thead>
+<tr>
+<th><strong>Kondisi</strong></th>
+<th><strong>Gunakan Normalisasi</strong></th>
+<th><strong>Gunakan Standarisasi</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Data tidak berdistribusi normal</td>
+<td>✅</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>Data berdistribusi normal (Gaussian)</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Ada outlier ekstrem</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Algoritma berbasis jarak (KNN, NN, SVM-RBF)</td>
+<td>✅</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>Algoritma berbasis distribusi (Regresi, PCA, SVM-Linear)</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><span class="n">Temperature</span> <span class="o">=</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">23</span><span class="p">]</span>
+<span class="n">Humidity</span> <span class="o">=</span> <span class="p">[</span><span class="mi">78</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">88</span><span class="p">,</span> <span class="mi">72</span><span class="p">,</span> <span class="mi">83</span><span class="p">,</span> <span class="mi">79</span><span class="p">,</span> <span class="mi">76</span><span class="p">,</span> <span class="mi">88</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">77</span><span class="p">]</span>
+
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Temperature =&#39;</span><span class="p">,</span> <span class="n">Temperature</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Humidity =&#39;</span><span class="p">,</span> <span class="n">Humidity</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>Temperature = [25, 21, 30, 35, 34, 33, 32, 33, 24, 23] 
+Humidity = [78, 75, 88, 72, 83, 79, 76, 88, 85, 77]
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">MinMaxScaler</span><span class="p">,</span> <span class="n">StandardScaler</span>
+
+<span class="c1"># Data asli</span>
+<span class="n">Temperature</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">25</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">23</span><span class="p">])</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">Humidity</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">78</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">88</span><span class="p">,</span> <span class="mi">72</span><span class="p">,</span> <span class="mi">83</span><span class="p">,</span> <span class="mi">79</span><span class="p">,</span> <span class="mi">76</span><span class="p">,</span> <span class="mi">88</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">77</span><span class="p">])</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Normalisasi (Min-Max Scaling)</span>
+<span class="n">minmax_scaler</span> <span class="o">=</span> <span class="n">MinMaxScaler</span><span class="p">()</span>
+<span class="n">Temperature_norm</span> <span class="o">=</span> <span class="n">minmax_scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">Temperature</span><span class="p">)</span>
+<span class="n">Humidity_norm</span> <span class="o">=</span> <span class="n">minmax_scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">Humidity</span><span class="p">)</span>
+
+<span class="c1"># Standarisasi (Z-score Scaling)</span>
+<span class="n">std_scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+<span class="n">Temperature_std</span> <span class="o">=</span> <span class="n">std_scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">Temperature</span><span class="p">)</span>
+<span class="n">Humidity_std</span> <span class="o">=</span> <span class="n">std_scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">Humidity</span><span class="p">)</span>
+
+<span class="c1"># Menampilkan hasil</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hasil Normalisasi&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Temperature:&quot;</span><span class="p">,</span> <span class="n">Temperature_norm</span><span class="o">.</span><span class="n">flatten</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Humidity:&quot;</span><span class="p">,</span> <span class="n">Humidity_norm</span><span class="o">.</span><span class="n">flatten</span><span class="p">())</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Hasil Standarisasi (Z-score Scaling)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Temperature:&quot;</span><span class="p">,</span> <span class="n">Temperature_std</span><span class="o">.</span><span class="n">flatten</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Humidity:&quot;</span><span class="p">,</span> <span class="n">Humidity_std</span><span class="o">.</span><span class="n">flatten</span><span class="p">())</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>Hasil Normalisasi
+Temperature: [0.28571429 0.         0.64285714 1.         0.92857143 0.85714286
+ 0.78571429 0.85714286 0.21428571 0.14285714]
+Humidity: [0.375  0.1875 1.     0.     0.6875 0.4375 0.25   1.     0.8125 0.3125]
+
+Hasil Standarisasi (Z-score Scaling)
+Temperature: [-0.80977633 -1.61955266  0.20244408  1.2146645   1.01222041  0.80977633
+  0.60733225  0.80977633 -1.01222041 -1.2146645 ]
+Humidity: [-0.39622642 -0.96226415  1.49056604 -1.52830189  0.54716981 -0.20754717
+ -0.77358491  1.49056604  0.9245283  -0.58490566]
+</code></pre></div>
+<h3 id="c-data-type">c. <em>Data Type</em></h3>
+<p>Algoritme pembelajaran mesin menangani berbagai jenis data. Oleh karena itu, berbagai jenis data memerlukan pendekatan yang berbeda terhadap algoritme ML. Jenis data dapat dikategorikan sebagai (a.1.) berurutan dan tidak berurutan dan (a.2) stasioner dan tidak stasioner.</p>
+<h4 id="c1-berurutan-dan-tidak-berurutan">c.1. Berurutan dan tidak berurutan</h4>
+<ul>
+<li>Tipe data sekuensial adalah tipe data yang memiliki urutan tertentu, seperti daftar, string, tupel, urutan byte, array byte, dan objek rentang. Elemen dalam tipe data tersebut dapat diakses melalui indeksnya, yang menunjukkan posisi mereka dalam urutan dan dimulai dari 0. Gambar (a)</li>
+<li>Tipe data non-sekuensial tidak memiliki urutan, seperti kamus (<em>dictoneries</em>) dan set. Tidak ada urutan yang dipertahankan di antara elemen dalam tipe data non-sekuensial. Gambar (b)</li>
+</ul>
+<p>\
+<img alt="gambar_s" src="../assets/data_urutan.png" /></p>
+<h4 id="c2-stasioner-dan-non-stasioner">c.2. Stasioner dan non-stasioner</h4>
+<ul>
+<li>
+<p>Kumpulan data stasioner diketahui memiliki sifat statistik yang konstan, seperti rata-rata, varians, dll., seiring waktu. Data dalam kumpulan data tersebut mudah diramalkan karena sifatnya tidak berubah seiring waktu. </p>
+</li>
+<li>
+<p>Kumpulan data non-stasioner yaitu kumpulan data yang sifat statistiknya berubah seiring waktu . Jenis data ini tidak dapat diramalkan atau dimodelkan karena sifatnya yang bervariasi. Data non-stasioner memiliki tren, siklus, atau musiman di dalamnya. Gambar 3.5 menunjukkan contoh data stasioner dan non-stasioner.</p>
+</li>
+</ul>
+<!-- <img src="assets/time_series.png" width="400"/> -->
+<p><img alt="gambar_s" src="../assets/time_series.png" /></p>
+<h3 id="d-data-spliting">d. Data Spliting</h3>
+<p>Pemisahan data berfungsi untuk melatih model ML dengan tepat. Pemisahan yang tepat mencegah model dari overfitting, memastikan penilaian yang tepat, dan meningkatkan kinerja model. </p>
+<p>Cara pemisahan data yang paling umum adalah </p>
+<div class="highlight"><pre><span></span><code>- dengan membagi dataset menjadi dua subset—satu dataset pelatihan dan satu lagi dataset pengujian.
+
+- namun, konvensi pemisahan menjadi tiga subset juga sudah umum. Dalam kasus ini, dataset dibagi menjadi dataset pelatihan, validasi, dan pengujian.
+</code></pre></div>
+<!-- <img src="assets/split.png" width="400"/> -->
+<p><img alt="gambar_s" src="../assets/split.png" /></p>
+<h2 id="3-tugas-mahasiswa">3. Tugas Mahasiswa</h2>
+<p>Silahkan lakukan pra-pemrosesan Data pada dataset Anda yang sudah dicari, jika belum ada gunakan dataset yang sudah disediakan!</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../Materi1/" class="btn btn-neutral float-left" title="Pertemuan 2: Pengantar Machine Learning pada bidang Teknik Elektro"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Materi3/" class="btn btn-neutral float-right" title="Pertemuan 4-5: Klaster (K-Means, Hirarki Klaster, DBSCAN)">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/gramandha/TKE1686-Machine-Learning" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../Materi1/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../Materi3/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
