@@ -80,8 +80,3 @@ Gunakan **k-NN** dan **Decision Tree** untuk melakukan klasifikasi dan tentukan 
   - **Status Pekerjaan** = Tetap  
 
 ---
-
-
-```python
-
-```
